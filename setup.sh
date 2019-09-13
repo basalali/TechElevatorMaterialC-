@@ -10,7 +10,7 @@
 echo
 read -r -p "Enter your name (First Last): " name
 read -r -p "Enter your email: " email
-read -r -p "Enter your cohort (c or java): " cohort
+read -r -p "Enter your cohort (c-sharp or java): " cohort
 read -r -p "Enter your bitbucket team (e.g. te-cbus-cohort-9): " team
 
 echo
@@ -28,7 +28,7 @@ git config --global difftool.code.cmd "code -w -d \$LOCAL \$REMOTE"
 echo
 echo "Configuring Upstream..."
 
-git remote add upstream "https://bitbucket.org/${team}/${cohort}-main"
+git remote add upstream "https://bitbucket.org/${team}/${cohort}-material"
 git config branch.master.mergeOptions "--no-edit"
 
 echo "Done."
