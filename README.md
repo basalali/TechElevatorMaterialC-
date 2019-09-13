@@ -1,17 +1,13 @@
 # Tech Elevator Curriculum v1
 
-This repository contains all the modules for Tech Elevator Curriculum v1. Inside each module you will find a folder for each day of the module. Inside that day you will find the following folder structure: 
+This repository contains the modules for Tech Elevator Curriculum v1. Inside each module you will find a folder for each day of the module. Inside that day you will find the following folder structure: 
 
-* **lecture-notes:** The lecture notes used by instructors.
-* **lecture-final:** The final lecture code that will be used by instructors.
-* **tutorial-final:** The final solution for the tutorial
-* **exercise-final:** The final solution for the exercise that the students will go through. 
+
 * **pair-exercise:** Student Pair Programming Exercises.
 * **student-exercise:** The starting code and documentation for student exercises. 
 * **student-lecture:** Any code or documentation needed for the student to go though the lecture. 
 * **student-tutorial:** Any code or documentation needed for the students to follow along with the tutorial.
 
-** Any folder that starts with `student-` will be copied over to the campus-cohort-track (ex: CLE-Cohort-10-Java) repository. 
 
 ## Module 1: Intro to Programming
 
@@ -40,4 +36,4 @@ Module 4 will cover an introduction to JavaScript. We will cover the fundamental
 
 ### Links
 
-* [Syllabus](https://trello.com/b/aC5APIRL/syllabus) The Student Syllabus Trello Board
+* [Syllabus](https://trello.com/b/cuZdusSG/cbus-cohort9-syllabus) The Student Syllabus Trello Board
