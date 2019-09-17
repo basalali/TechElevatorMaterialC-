@@ -32,20 +32,34 @@ namespace VariableNaming
             3. 3 raccoons are playing in the woods. 2 go home to eat dinner. How
             many raccoons are left in the woods?
             */
+            int numberOfRaccoons = 3;
+            int numberOfRaccoonsGoHome = 2;
+            int numberOfRaccoonsLeftInWoods = numberOfRaccoons - numberOfRaccoonsGoHome;
 
             /*
             4. There are 5 flowers and 3 bees. How many less bees than flowers?
             */
+            int numberOfFlowers = 5;
+            int numberOfBees = 3;
+            int numberOfLessBees = numberOfFlowers - numberOfBee;
+
 
             /*
             5. 1 lonely pigeon was eating breadcrumbs. Another pigeon came to eat
             breadcrumbs, too. How many pigeons are eating breadcrumbs now?
             */
 
+            int pigeonsInitial = 1;
+            int pigeonThatJoins = 1;
+            int totalNumberOfPigeons = pigeonsInitial + pigeonThatJoins;
+
             /*
             6. 3 owls were sitting on the fence. 2 more owls joined them. How many
             owls are on the fence now?
             */
+            int numberOfOwlsOnFence = 3;
+            int numberOfOwlsThatJoin = 2;
+            int numberOfTotalOwls = numberOfOwlsOnFence + numberOfOwlsThatJoin; 
 
             /*
             7. 2 beavers were working on their home. 1 went for a swim. How many

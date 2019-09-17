@@ -40,7 +40,13 @@ changes directory, and the "pwd" command reflects this.
 ----
 
 $ ls -la
-<type or copy-paste the result here>
+<total 12
+drwxr-xr-x 1 basala 197121   0 Sep 16 15:20 ./
+drwxr-xr-x 1 basala 197121   0 Sep 17 09:45 ../
+drwxr-xr-x 1 basala 197121   0 Sep 16 15:20 database/
+drwxr-xr-x 1 basala 197121   0 Sep 16 15:20 Helloworld/
+-rw-r--r-- 1 basala 197121 998 Sep 16 15:20 Helloworld.sln
+>
 
 
 ----
@@ -48,14 +54,14 @@ $ ls -la
     Exercise 4 represent?
 ----
 
-<type your answer here>
+<. means the directory itself and .. means the parent>
 
 ----
 6.  What are the names of the files, including any dot-files, displayed in the
     directory listing in Exercise 4?
 ----
 
-<type or copy-paste your answer here>
+<Helloworld.sln>
 
 
 ----
@@ -63,7 +69,13 @@ $ ls -la
     the directory listing in Exercise 4?
 ----
 
-<type or copy-paste your answer here>
+<
+./
+../
+database/
+Helloworld/
+Helloworld.sln
+>
 
 
 ----
@@ -95,7 +107,12 @@ $ less database/pagila.sql
 
 You are encouraged to make "less" part of your standard command line toolkit.
 
-<type or copy-paste the first five lines of either file here>
+<Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helloworld", "Helloworld\Helloworld.csproj", "{D70F7947-F80A-47D9-9F6C-E34B71E8E50D}"
+>
 
 ----
 9.  This is good time to create a Git snapshot of your progress.  Usually,
