@@ -125,14 +125,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helloworld", "Helloworld\He
 
 Did you remember to save "introduction-to-tools-exercise.txt"?
 
-$ git status
-<type or copy-paste the result here>
+$ <git status>
 
-$ git add -A
-<type or copy-paste the result here>
 
-$ git commit -m "Good stopping point"
-<type or copy-paste the result here>
+$ <git add -A>
+
+
+$ <git commit -m "Good stopping point">
 
 Note, you do not need to push this commit up to BitBucket at this time. The
 typical Git workflow is to make many small commits to your local repo while
@@ -187,14 +186,14 @@ destination file.
 
 $ <ls -la>
 <total 15
-drwxr-xr-x 1 basala 197121    0 Sep 17 14:55 ./
+drwxr-xr-x 1 basala 197121    0 Sep 17 15:00 ./
 drwxr-xr-x 1 basala 197121    0 Sep 17 14:29 ../
 -rw-r--r-- 1 basala 197121  186 Sep 16 15:20 App.config
 -rw-r--r-- 1 basala 197121 2712 Sep 16 15:20 Helloworld.csproj
 -rw-r--r-- 1 basala 197121  266 Sep 16 15:20 Program.cs
--rw-r--r-- 1 basala 197121  266 Sep 17 14:55 Program.cs.copy
+-rw-r--r-- 1 basala 197121  266 Sep 17 15:00 Program.cs.backup
 drwxr-xr-x 1 basala 197121    0 Sep 16 15:20 Properties/
->
+ >
 
 
 ----
@@ -207,8 +206,16 @@ $ mv Program.cs.backup Program.cs.copy
 The "mv" parameters are the existing name of the file followed by the new name
 of the file.
 
-$ <enter command to list all files and directories in order to confirm the renaming of the file>
-<type or copy-paste the result here>
+$ <ls -la>
+<total 15
+drwxr-xr-x 1 basala 197121    0 Sep 17 15:01 ./
+drwxr-xr-x 1 basala 197121    0 Sep 17 14:29 ../
+-rw-r--r-- 1 basala 197121  186 Sep 16 15:20 App.config
+-rw-r--r-- 1 basala 197121 2712 Sep 16 15:20 Helloworld.csproj
+-rw-r--r-- 1 basala 197121  266 Sep 16 15:20 Program.cs
+-rw-r--r-- 1 basala 197121  266 Sep 17 15:00 Program.cs.copy
+drwxr-xr-x 1 basala 197121    0 Sep 16 15:20 Properties/
+>
 
 
 ----
@@ -219,17 +226,51 @@ $ <enter command to list all files and directories in order to confirm the renam
     others on our teams.
 ----
 
-$ <enter the Git command to display status>
-<type or copy-paste the result here>
+$ <git status>
+<On branch master
+Your branch is up to date with 'origin/master'.
 
-$ <enter the Git command to "stage" all changes>
-<type or copy-paste the result here>
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
 
-$ <enter the Git command to save all "staged" changes>
-<type or copy-paste the result here>
+        modified:   ../../introduction-to-tools-exercises.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        Program.cs.copy
+
+no changes added to commit (use "git add" and/or "git commit -a")
+>
+
+$ <git add -A w/ (git status)>
+<On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   Program.cs.copy
+        modified:   ../../introduction-to-tools-exercises.txt
+>
+
+$ <git commit -m "feature complete">
+<[master 050bff4] feature complete
+ 2 files changed, 38 insertions(+), 9 deletions(-)
+ create mode 100644 module-1/01_Introduction_Tools/student-exercise/csharp-helloworld/Helloworld/Program.cs.copy
+>
 
 $ git push origin master
-<type or copy-paste the result here>
+<Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (8/8), 1.00 KiB | 256.00 KiB/s, done.
+Total 8 (delta 4), reused 0 (delta 0)
+To https://bitbucket.org/te-cbus-cohort-9/basalali-c-sharp-material.git
+   a174d77..050bff4  master -> master
+>
 
 
 ----
@@ -240,8 +281,15 @@ $ rm Program.cs.copy
 
 The "rm" parameter is the name of the file to be deleted.
 
-$ <enter command to list all files and directories in order to confirm the file deletion>
-<type or copy-paste the result here>
+$ <ls -la>
+<total 14
+drwxr-xr-x 1 basala 197121    0 Sep 17 15:06 ./
+drwxr-xr-x 1 basala 197121    0 Sep 17 14:29 ../
+-rw-r--r-- 1 basala 197121  186 Sep 16 15:20 App.config
+-rw-r--r-- 1 basala 197121 2712 Sep 16 15:20 Helloworld.csproj
+-rw-r--r-- 1 basala 197121  266 Sep 16 15:20 Program.cs
+drwxr-xr-x 1 basala 197121    0 Sep 16 15:20 Properties/
+>
 
 
 ----
@@ -262,8 +310,9 @@ command line when that seems natural.
 
 Regardless of the option you chose, check your new location.
 
-$ <enter command to display present working directory>
-<type or copy-paste your present working directory here>
+$ <pwd>
+</c/Users/basala/BASALALI-c-sharp-material/module-1/01_Introduction_Tools/student-exercise/csharp-helloworld
+>
 
 
 ----
@@ -272,9 +321,10 @@ $ <enter command to display present working directory>
 ----
 
 $ mkdir docs
-$ <enter the command to change directory to "docs" using a relative path>
-$ <enter command to display present working directory>
-<type or copy-paste your present working directory here>
+$ <cd docs>
+$ <pwd>
+</c/Users/basala/BASALALI-c-sharp-material/module-1/01_Introduction_Tools/student-exercise/csharp-helloworld/docs
+>
 
 ----
 19. Create a new file name "readme.txt" using VS Code, and add the text
@@ -291,10 +341,10 @@ Don't forget to save the file in VS Code!
     work so it can be reviewed by an instructor.
 ----
 
-$ <enter the Git command to display status>
+$ <git status>
 
-$ <enter the Git command to "stage" all changes>
+$ <git add -A>
 
-$ <enter the Git command to save all "staged" changes>
+$ <git commit -m "initial comment">
 
-$ <enter the Git command to save local repository to BitBucket>
+$ <git push origin master>
