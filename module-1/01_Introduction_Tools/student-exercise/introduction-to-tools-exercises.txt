@@ -54,7 +54,7 @@ drwxr-xr-x 1 basala 197121   0 Sep 16 15:20 Helloworld/
     Exercise 4 represent?
 ----
 
-<. means the directory itself and .. means the parent>
+<. means the directory itself and .. means the parent directory>
 
 ----
 6.  What are the names of the files, including any dot-files, displayed in the
@@ -148,16 +148,15 @@ along, and then at the end.
 ----
 
 $ cd Helloworld
-$ <enter command to display present working directory>
-<type or copy-paste your present working directory here>
-
+$ <pwd>
+</c/Users/basala/Helloworld>
 
 ----
 11. Does the change directory command in Exercise 10 use a relative, or absolute
     path?
 ----
 
-<type your answer here>
+<relative path because it is not a fully qualified name.>
 
 
 ----
@@ -165,8 +164,14 @@ $ <enter command to display present working directory>
     your present working directory.
 ----
 
-$ <enter command to list all files and directories including dot-files and dot-directories>
-<type or copy-paste the result here>
+$ <ls- la>
+<total 24
+drwxr-xr-x 1 basala 197121    0 Sep 17 11:01 ./
+drwxr-xr-x 1 basala 197121    0 Sep 17 14:29 ../
+drwxr-xr-x 1 basala 197121    0 Sep 17 11:01 .vs/
+drwxr-xr-x 1 basala 197121    0 Sep 17 11:07 HelloWorld/
+-rw-r--r-- 1 basala 197121 1128 Sep 17 11:01 HelloWorld.sln
+>
 
 
 ----
@@ -180,8 +185,16 @@ $ cp Program.cs Helloworld.cs.backup
 The "cp" parameters are the name of the source file followed by the name of the
 destination file.
 
-$ <enter command to list all files and directories in order to confirm the creation of the backup file>
-<type or copy-paste the result here>
+$ <ls -la>
+<total 15
+drwxr-xr-x 1 basala 197121    0 Sep 17 14:55 ./
+drwxr-xr-x 1 basala 197121    0 Sep 17 14:29 ../
+-rw-r--r-- 1 basala 197121  186 Sep 16 15:20 App.config
+-rw-r--r-- 1 basala 197121 2712 Sep 16 15:20 Helloworld.csproj
+-rw-r--r-- 1 basala 197121  266 Sep 16 15:20 Program.cs
+-rw-r--r-- 1 basala 197121  266 Sep 17 14:55 Program.cs.copy
+drwxr-xr-x 1 basala 197121    0 Sep 16 15:20 Properties/
+>
 
 
 ----
