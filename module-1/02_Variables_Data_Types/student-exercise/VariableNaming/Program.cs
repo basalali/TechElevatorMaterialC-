@@ -32,16 +32,16 @@ namespace VariableNaming
             3. 3 raccoons are playing in the woods. 2 go home to eat dinner. How
             many raccoons are left in the woods?
             */
-            int numberOfRaccoons = 3;
+            int numberOfRaccoonsPlaying = 3;
             int numberOfRaccoonsGoHome = 2;
-            int numberOfRaccoonsLeftInWoods = numberOfRaccoons - numberOfRaccoonsGoHome;
+            int numberOfRaccoonsLeftInWoods = numberOfRaccoonsPlaying - numberOfRaccoonsGoHome;
 
             /*
             4. There are 5 flowers and 3 bees. How many less bees than flowers?
             */
             int numberOfFlowers = 5;
             int numberOfBees = 3;
-            int numberOfLessBees = numberOfFlowers - numberOfBee;
+            int numberOfFlowerlessBees = numberOfFlowers - numberOfBees; 
 
 
             /*
@@ -50,8 +50,8 @@ namespace VariableNaming
             */
 
             int pigeonsInitial = 1;
-            int pigeonThatJoins = 1;
-            int totalNumberOfPigeons = pigeonsInitial + pigeonThatJoins;
+            int pigeonsThatJoin = 1;
+            int totalNumberOfPigeons = pigeonsInitial + pigeonsThatJoin;
 
             /*
             6. 3 owls were sitting on the fence. 2 more owls joined them. How many
@@ -59,27 +59,41 @@ namespace VariableNaming
             */
             int numberOfOwlsOnFence = 3;
             int numberOfOwlsThatJoin = 2;
-            int numberOfTotalOwls = numberOfOwlsOnFence + numberOfOwlsThatJoin; 
+            int numberOfTotalOwls = numberOfOwlsOnFence + numberOfOwlsThatJoin;
 
             /*
             7. 2 beavers were working on their home. 1 went for a swim. How many
             beavers are still working on their home?
             */
-
+            int workingBeavers = 2;
+            int swimmingBeavers = 1;
+            int remainingBeavers = workingBeavers - swimmingBeavers;
             /*
             8. 2 toucans are sitting on a tree limb. 1 more toucan joins them. How
             many toucans in all?
             */
+            int sittingToucans = 2;
+            int additionalToucan = 1;
+            int totalToucansOnTree = sittingToucans + additionalToucan;
 
             /*
             9. There are 4 squirrels in a tree with 2 nuts. How many more squirrels
             are there than nuts?
             */
 
+            int squirrelsOnTree = 4;
+            int numberOfNuts = 2;
+            int nutlessSquirrels = squirrelsOnTree - numberOfNuts;
+
             /*
             10. Mrs. Hilt found a quarter, 1 dime, and 2 nickels. How much money did
             she find?
             */
+            double quarter = .25;
+            double dime = .10;
+            double nickle = .10;
+            double totalAmountOfMoney = quarter + dime + nickle;
+            
 
             /*
             11. Mrs. Hilt's favorite first grade classes are baking muffins. Mrs. Brier's
@@ -87,96 +101,155 @@ namespace VariableNaming
             Mrs. Flannery's class bakes 17 muffins. How many muffins does first
             grade bake in all?
             */
+            int mrBriersClass = 18;
+            int mrsMacAdamsClass = 20;
+            int mrsFlannerysClass = 17;
+            int totalMuffinsBaked = mrBriersClass + mrsMacAdamsClass + mrsFlannerysClass;
 
             /*
             12. Mrs. Hilt bought a yoyo for 24 cents and a whistle for 14 cents. How
             much did she spend in all for the two toys?
             */
+            double costOfYoyoInCents = .24;
+            double costOfWhistleInCents = .14;
+            double costOfBothToysInCents = costOfYoyoInCents + costOfWhistleInCents;
 
             /*
             13. Mrs. Hilt made 5 Rice Krispie Treats. She used 8 large marshmallows
             and 10 mini marshmallows.How many marshmallows did she use
             altogether?
             */
+            int treatsMade = 5;
+            int numOfLargeMarshmallows = 8;
+            int numOfMiniMarshmallows = 10;
+            int totaNumOfMarshmallows = numOfLargeMarshmallows + numOfMiniMarshmallows;
+
 
             /*
             14. At Mrs. Hilt's house, there was 29 inches of snow, and Brecknock
             Elementary School received 17 inches of snow. How much more snow
             did Mrs. Hilt's house have?
             */
+            int inchesOfSnowHiltsHouse = 29;
+            int inchesOfSnowSchool = 17;
+            int differenceOfBoth = inchesOfSnowHiltsHouse - inchesOfSnowSchool;
 
             /*
             15. Mrs. Hilt has $10. She spends $3 on a toy truck and $2 on a pencil
             case. How much money does she have left?
             */
+            double mrsHiltInitialAmount = 10;
+            double spendsOnToyTruck = 3;
+            double spendsOnPencilCase = 2;
+            double mrsHiltsBalance = (mrsHiltInitialAmount - spendsOnToyTruck - spendsOnPencilCase);
+         
 
             /*
             16. Josh had 16 marbles in his collection. He lost 7 marbles. How many
             marbles does he have now?
             */
+            int initialMarbles = 16;
+            int lostMarbles = 7;
+            int remainingMarbles = initialMarbles - lostMarbles;
 
             /*
             17. Megan has 19 seashells. How many more seashells does she need to
             find to have 25 seashells in her collection?
             */
+            int meagansInitialSeashells = 19;
+            int targetSeashells = 25;
+            int amountLeftToReachTarget = targetSeashells - meagansInitialSeashells;
+
 
             /*
             18. Brad has 17 balloons. 8 balloons are red and the rest are green. How
             many green balloons does Brad have?
             */
+            int bradsTotalBalloons = 17;
+            int redBalloons = 8;
+            int greenBalloons = bradsTotalBalloons - redBalloons;
 
             /*
             19. There are 38 books on the shelf. Marta put 10 more books on the shelf.
             How many books are on the shelf now?
             */
+            int booksOnShelf = 38;
+            int addedBooks = 10;
+            int totalNumberOfBooksOnShelf = booksOnShelf + addedBooks;
 
             /*
             20. A bee has 6 legs. How many legs do 8 bees have?
             */
 
+            int legsOnABee = 6;
+            int numberofBees = 8;
+            int totalNumberOfLegsOnEightBees = legsOnABee * numberofBees;
+
+
             /*
             21. Mrs. Hilt bought an ice cream cone for 99 cents. How much would 2 ice
             cream cones cost?
             */
+            double priceOfOneIceCreamCone = .99;
+            int numberOfIceCreamCones = 2;
+            double totalPriceOfTwoIceCreamCones = priceOfOneIceCreamCone * numberOfIceCreamCones;
 
             /*
             22. Mrs. Hilt wants to make a border around her garden. She needs 125
             rocks to complete the border. She has 64 rocks. How many more rocks
             does she need to complete the border?
             */
+            int totalNumberOfRocksNeeded = 125;
+            int numberofCurrentRocks = 64;
+            int remainingRocksNeeded = totalNumberOfRocksNeeded - numberofCurrentRocks;
 
             /*
             23. Mrs. Hilt had 38 marbles. She lost 15 of them. How many marbles does
             she have left?
             */
-
+            int mrsHiltsInitialMarbs = 38;
+            int mrsHiltsLostMarbs = 15;
+            int remainingMarbsOfMrsHilts = mrsHiltsInitialMarbs - mrsHiltsLostMarbs;
             /*
             24. Mrs. Hilt and her sister drove to a concert 78 miles away. They drove 32
             miles and then stopped for gas. How many miles did they have left to drive?
             */
+            int totalNumberOfMiles = 78;
+            int totalNumberOfMilesDriven = 32;
+            int totalNumOfMilesRemaining = totalNumberOfMiles - totalNumberOfMilesDriven;
 
             /*
             25. Mrs. Hilt spent 1 hour and 30 minutes shoveling snow on Saturday
             morning and 45 minutes shoveling snow on Saturday afternoon. How
             much total time did she spend shoveling snow?
             */
-
+            double timeSpentShovelingSatMorn = 1.3;
+            double timeSpentShovelingSatAft = .45;
+            double totalTimeSpentShoveling = timeSpentShovelingSatMorn + timeSpentShovelingSatAft;
+            
             /*
             26. Mrs. Hilt bought 6 hot dogs. Each hot dog cost 50 cents. How much
             money did she pay for all of the hot dogs?
             */
-
+            int numberofHotDogs = 6;
+            double costofEachHotDog = .50;
+            double moneySpentOnHotDogs = numberofHotDogs * costofEachHotDog;
+           
             /*
             27. Mrs. Hilt has 50 cents. A pencil costs 7 cents. How many pencils can
             she buy with the money she has?
             */
+            double mrsHiltsInitialBalance = .50;
+            double costOfPencil = .07;
+            int maxAmountOfPencilsSheCanBuy = (mrsHiltsInitialBalance / costOfPencil);
+            
 
             /*
             28. Mrs. Hilt saw 33 butterflies. Some of the butterflies were red and others
             were orange. If 20 of the butterflies were orange, how many of them
             were red?
             */
-
+            
             /*
             29. Kate gave the clerk $1.00. Her candy cost 54 cents. How much change
             should Kate get back?
