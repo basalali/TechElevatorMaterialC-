@@ -14,8 +14,11 @@ namespace Lecture
         */
         public bool ReturnTrueWhenGreaterThanFiveInOneLine(int number)
         {
-            return false; // What can we put here that returns a bool that we want?
-        }
 
+            return (number > 5);
+            
+             // What can we put here that returns a bool that we want?
+        }
+        
     }
 }
