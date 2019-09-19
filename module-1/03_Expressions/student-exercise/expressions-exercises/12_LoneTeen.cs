@@ -17,6 +17,7 @@ namespace Exercises
         */
         public bool LoneTeen(int a, int b)
         {
+            if (a >= 13)
             return false;
         }
 
