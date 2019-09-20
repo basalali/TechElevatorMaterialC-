@@ -25,6 +25,11 @@ namespace Exercises
             {
                 return 0;
             }
+            else if ( a==13 && c ==13)
+
+            {
+                return 0;
+            }
             else if (b == 13)
             {
                 return a;
