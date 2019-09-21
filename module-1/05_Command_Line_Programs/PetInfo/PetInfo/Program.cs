@@ -19,33 +19,45 @@ namespace PetInfo
                 switch (selection)
                 {
                     case "1":
+                        Console.WriteLine();
                         Console.WriteLine("Please enter a type of pet (dog, cat, parrot, etc.)");
                         petType = Console.ReadLine();
+                        Console.WriteLine();
                         break;
                     case "2":
+                        Console.WriteLine();
                         Console.WriteLine("Please enter the number of pets");
                         string petCount = Console.ReadLine();
                         arraySize = int.Parse(petCount);
 
                          pets = new string[arraySize];
+                        Console.WriteLine();
                         break;
                     case "3":
-                        for(int i = 0; i <pets.Length; i++)
+                        Console.WriteLine();
+                        for (int i = 0; i <pets.Length; i++)
                         {
                             Console.WriteLine("Please enter a pet name:");
                             pets[i] = Console.ReadLine();
                         }
-
+                        Console.WriteLine();
                         break;
                     case "4":
+                        Console.WriteLine();
+                        Console.WriteLine("Pet Type: " + petType);
+                        Console.WriteLine("Pet Count: " + arraySize);
+                        Console.WriteLine("Please enter a pet name:");
                         for (int i = 0; i < pets.Length; i++)
                         {
                             Console.WriteLine(pets[i]);
                         }
+                        Console.WriteLine();
                         break;
 
                     default:
+                        Console.WriteLine();
                         Console.WriteLine("Please make a valid selection.");
+                        Console.WriteLine();
                         break;
 
                 }
