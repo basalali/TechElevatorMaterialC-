@@ -17,7 +17,27 @@ namespace Exercises
          */
         public bool CommonEnd(int[] a, int[] b)
         {
+            for (int i = 0; i < a.Length; i++)
+            {
+               for (int j = 0; j < b.Length; j++)
+                {
+                    if (a[0] == b[0] || a[a.Length - 1] == b[b.Length - 1])
+                    {
+                        return true;
+                    }
+
+                    else
+                    {
+                        return false;
+                            };
+                    
+                }
+            }
+
+           
             return false;
+
+
         }
 
     }

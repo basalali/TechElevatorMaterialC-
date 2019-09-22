@@ -17,6 +17,20 @@ namespace Exercises
          */
         public bool FirstLast6(int[] nums)
         {
+         
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[nums.Length -1] == 6)
+                {
+                    return true;
+                }
+
+                else if (nums[0] == 6)
+                    return true;
+
+            }
+            
             return false;
         }
     }
