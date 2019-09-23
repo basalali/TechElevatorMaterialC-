@@ -15,7 +15,30 @@ Please enter the Fibonacci number: 25
 0, 1, 1, 2, 3, 5, 8, 13, 21*/
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Please enter the Fibonacci number:");
+
+            int valueNew = int.Parse(Console.ReadLine());
+            
+         
+            int num1 = 0;
+            int num2 = 1;
+
+            while (num2 < valueNew - num1)
+            {
+                
+                int temp = num1;
+                num1 = num2;
+                num2 = temp + num1;
+
+                    Console.WriteLine(num2);
+              }
+            Console.WriteLine();
+            Console.ReadLine();
+
+            
+
+
+
         }
     }
 }
