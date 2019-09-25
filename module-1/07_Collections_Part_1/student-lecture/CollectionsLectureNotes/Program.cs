@@ -19,10 +19,10 @@ namespace CollectionsLectureNotes
 
             // Creating lists of integers
 
-
+            List<int> nums = new List<int>();
             // Creating lists of strings
 
-
+            List<string> strings = new List<string>();
 
             /////////////////
 
@@ -32,30 +32,42 @@ namespace CollectionsLectureNotes
             //////////////////
 
 
+
             /////////////////
             // ADDING ITEMS
             /////////////////
 
             // Adding items one at a time to each list
 
+            nums.Add(7);
+            strings.Add(8.ToString());
+            strings.Add("My name");
+
 
             /////////////////
             // ADDING MULTIPLE ITEMS
             /////////////////
 
-
+            int[] values = { 34, 1, 4, 2, 5, 15, };
+            nums.AddRange(values);
 
             //////////////////
             // ACCESSING BY INDEX
             //////////////////
 
-
+            Console.WriteLine(nums[0]);
 
 
             ///////////////////
             // ACCESSING WITH FOR-EACH
             ///////////////////
 
+            foreach (int item in nums)
+            {
+                Console.Write(item + " ");
+               
+            }
+            Console.WriteLine();
 
             ////////////////////
             // ADDITIONAL LIST<T> METHODS
@@ -65,8 +77,13 @@ namespace CollectionsLectureNotes
             ////////////////////////
             // SORT and PRINT A LIST
             ////////////////////////
-
-
+            nums.Sort();
+            foreach (int item in nums)
+            {
+                Console.Write(item + " ");
+                
+            }
+            Console.WriteLine();
 
 
             // QUEUE <T>
@@ -75,10 +92,21 @@ namespace CollectionsLectureNotes
             // With Queues, we Enqueue (add) and Dequeue (remove) items.
 
 
+
+
             /////////////////////
             // PROCESSING ITEMS IN A QUEUE
             /////////////////////
 
+            Queue<int> numbers = new Queue<int>(); // first in first out: FIFO
+            numbers.Enqueue(3);
+            numbers.Enqueue(1);
+            numbers.Enqueue(4);
+            while (numbers.Count > 0)
+            {
+                int temp = numbers.Dequeue();
+                Console.WriteLine(temp);
+            }
 
 
             // STACK <T>
@@ -90,13 +118,21 @@ namespace CollectionsLectureNotes
             ////////////////////
             // PUSHING ITEMS TO THE STACK
             //////////////////// 
+            Stack<string> names = new Stack<string>(); // LIFO: Last in, first out!
+            names.Push("Primrose");
+            names.Push("Penny");
+            names.Push("Gabe");
 
-            
+            while (names.Count > 0)
+            {
+                Console.WriteLine(names.Pop());
+            };
+
 
             ////////////////////
             // POPPING THE STACK
             ////////////////////
-            
+
 
             Console.ReadLine();
 

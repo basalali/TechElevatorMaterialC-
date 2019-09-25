@@ -16,7 +16,15 @@ namespace Exercises
          */
         public bool DoubleX(string str)
         {
-            return false;
+
+            int indexOfX = str.IndexOf("x");
+            if (indexOfX < 0) return false;
+
+            string stringOfX = str.Substring(indexOfX);
+            return stringOfX.StartsWith("xx");
+
+            
+          
         }
     }
 }

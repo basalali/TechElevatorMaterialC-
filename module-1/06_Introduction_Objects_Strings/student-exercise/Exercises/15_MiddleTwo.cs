@@ -21,15 +21,7 @@ namespace Exercises
 
 
         
-            return str.Substring((str.Length / 2) - 1, (str.Length / 2) + 1);
-
-            /*int half = str.Length / 2;
-
-
-            string beforeHalf = str.Substring(half - 1, half);
-            string afterHalf = str.Substring(half, half + 1);
-
-            return beforeHalf + afterHalf;*/
+            return str.Substring((str.Length / 2) - 1, 2);
 
 
         }
