@@ -16,11 +16,15 @@ namespace Exercises
          */
         public List<string> Array2List(string[] stringArray)
         {
-            List<string> result = new List<string>();
-            result.AddRange(stringArray);
 
-            return result;
+            List<string> myList = new List<string>();
+
+
+            myList.AddRange(stringArray);
+
+            return myList;
+          
         }
-
+        
     }
 }

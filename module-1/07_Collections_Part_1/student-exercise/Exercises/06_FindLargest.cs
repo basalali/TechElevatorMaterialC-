@@ -16,6 +16,13 @@ namespace Exercises
          */
         public int FindLargest(List<int> integerList)
         {
+
+            foreach (int items in integerList)
+            {
+                return integerList.Max();
+
+            }
+
             return 0;
         }
 

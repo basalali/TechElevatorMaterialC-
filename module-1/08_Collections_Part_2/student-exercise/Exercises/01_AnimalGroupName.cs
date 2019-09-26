@@ -38,6 +38,10 @@ namespace Exercises
          */
         public string AnimalGroupName(string animalName)
         {
+
+            Dictionary<string, string> animalName = new Dictionary<string, string>();
+
+
             return null;
         }
     }
