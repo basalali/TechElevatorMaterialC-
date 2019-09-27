@@ -18,6 +18,22 @@ namespace Exercises
          */
         public Dictionary<string, string> BeginningAndEnding(string[] words)
         {
+            while (words.Length > 0)
+            {
+
+
+
+
+
+
+
+
+
+
+            }
+
+
+
             return null;
         }
     }

@@ -39,10 +39,59 @@ namespace Exercises
         public string AnimalGroupName(string animalName)
         {
 
-            Dictionary<string, string> animalName = new Dictionary<string, string>();
+            Dictionary<string, string> aniName = new Dictionary<string, string>();
 
 
-            return null;
+
+            aniName["rhino"] = "Crash";
+            aniName["giraffe"] = "Tower";
+            aniName["elephant"] = "Herd";
+            aniName["lion"] = "Pride";
+            aniName["crow"] = "Murder";
+            aniName["pigeon"] = "Kit";
+            aniName["flamingo"] = "Pat";
+            aniName["deer"] = "Herd";
+            aniName["dog"] = "Pack";
+            aniName["crocodile"] = "Float";
+          
+
+            string userInput = animalName.ToLower();
+      
+            foreach(KeyValuePair<string, string> kvp in aniName)
+            {
+                if (kvp.Key == userInput)
+                {
+                    return kvp.Value;
+                }
+
+                
+            }
+            return "unknown";
+
+
+
+
+
+
+
+            /* (aniName.ContainsKey(animalName.ToLower()))
+
+            {
+
+                return aniName[animalName.ToLower()];
+            }
+
+       else
+
+            {
+                return "unkown";
+            }  */
+
+
+
+        }
+            
         }
     }
-}
+
+

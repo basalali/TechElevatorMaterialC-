@@ -35,14 +35,41 @@ namespace Exercises
         public double IsItOnSale(string itemNumber)
         {
             // First create a Dictionary that holds this data
-                //"KITCHEN4001"-> 0.20
-                //"GARAGE1070"-> 0.15
-                //"LIVINGROOM"-> 0.10
-                //"KITCHEN6073"-> 0.40
-                //"BEDROOM3434"-> 0.60
-                //"BATH0073"-> 0.15
+            //"KITCHEN4001"-> 0.20
+            //"GARAGE1070"-> 0.15
+            //"LIVINGROOM"-> 0.10
+            //"KITCHEN6073"-> 0.40
+            //"BEDROOM3434"-> 0.60
+            //"BATH0073"-> 0.15
 
             // Now check the Dictionary you just created for the itemNumber
+
+            Dictionary<string, double> myDictionary = new Dictionary<string, double>();
+
+            myDictionary["kitchen4001"] = 0.20;
+            myDictionary["garage1070"] = 0.15;
+            myDictionary["livingroom"] = 0.10;
+            myDictionary["kitchen6073"] = 0.40;
+            myDictionary["bedroom3434"] = 0.60;
+            myDictionary["bath0073"] = 0.15;
+
+            string userInput = itemNumber.ToLower(); 
+
+            foreach(KeyValuePair<string, double> kvp in myDictionary)
+
+            {
+                if (kvp.Key == userInput)
+                {
+                    return kvp.Value;
+                }
+            }
+
+
+
+
+
+
+
 
             return 0.00;
         }
