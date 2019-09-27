@@ -68,26 +68,7 @@ namespace Exercises
             }
             return "unknown";
 
-
-
-
-
-
-
-            /* (aniName.ContainsKey(animalName.ToLower()))
-
-            {
-
-                return aniName[animalName.ToLower()];
-            }
-
-       else
-
-            {
-                return "unkown";
-            }  */
-
-
+           
 
         }
             

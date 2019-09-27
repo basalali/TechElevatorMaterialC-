@@ -65,12 +65,6 @@ namespace Exercises
             }
 
 
-
-
-
-
-
-
             return 0.00;
         }
     }

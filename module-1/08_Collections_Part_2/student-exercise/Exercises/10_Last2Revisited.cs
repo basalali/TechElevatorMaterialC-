@@ -11,7 +11,7 @@ namespace Exercises
         /*
          * Just when you thought it was safe to get back in the water --- Last2Revisited!!!!
          *
-         * Given an array of strings, for each string, the count of the number of times that a substring length 2 appears
+         * Given an array of strings, for each string, return the count of the number of times that a substring length 2 appears
          * in the string and also as the last 2 chars of the string, so "hixxxhi" yields 1.
          *
          * We don't count the end substring, but the substring may overlap a prior position by one.  For instance, "xxxx"
@@ -25,7 +25,28 @@ namespace Exercises
          */
         public Dictionary<string, int> Last2Revisited(string[] words)
         {
-            return null;
+           
+
+            Dictionary<string, int> newDict = new Dictionary<string, int>();
+
+            foreach (string item in words)
+            {
+                newDict[item] = 0;
+                   
+               for (int i = 0; i < item.Length - 2; i++)
+                {
+                    if (item.Substring(i, 2) == item.Substring(item.Length - 2, 2))
+                            {
+
+                        newDict[item]++;
+                            }
+                }
+
+
+            }
+
+
+            return newDict;
         }
     }
 }
