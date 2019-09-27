@@ -45,6 +45,11 @@ namespace ClassExample
         {
             this.screenSize = screenSize;
         }
+        public Television()
+        {
+            this.screenSize = 32;
+        }
+
 
         public bool SetCaPbWarning(bool input)
         {

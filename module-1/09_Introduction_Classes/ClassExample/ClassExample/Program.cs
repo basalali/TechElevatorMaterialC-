@@ -7,7 +7,7 @@ namespace ClassExample
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            Television myTelevision = new Television();
+            Television myTelevision = new Television(34);
             Console.WriteLine(myTelevision.ToString());
 
             myTelevision.SerialNumber = "ABC123";
