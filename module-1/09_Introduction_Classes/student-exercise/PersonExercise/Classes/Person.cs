@@ -8,6 +8,41 @@ namespace TechElevator.Classes
 {
     public class Person
     {
-        //Class Code Goes Here
+
+        
+            private string firstName;
+            private string lastName;
+            private int age;
+
+            public string FirstName
+            {
+                get { return firstName; }
+                set { firstName = value; }
+            }
+
+            public string LastName
+            {
+                get { return lastName; }
+                set { lastName = value; }
+            }
+
+            public int Age
+            {
+                get { return age; }
+                set { age = value; }
+            }
+
+            public string GetFullName()
+            {
+                return firstName + " " + lastName;
+            }
+
+            public bool IsAdult()
+            {
+                return age >= 18;
+            }
+        
+        }
+
     }
-}
+
