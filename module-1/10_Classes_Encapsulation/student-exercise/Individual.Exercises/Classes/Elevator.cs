@@ -29,18 +29,17 @@ namespace Individual.Exercises.Classes
 
         public void GoUp(int desiredFloor)
         {
-            if (!DoorIsOpen && desiredFloor != NumberOfLevels)
+            if (DoorIsOpen == false && CurrentLevel < NumberOfLevels)
             {
-                CurrentLevel = NumberOfLevels - desiredFloor;
+                CurrentLevel += (desiredFloor - CurrentLevel);
             }
-           
         }
 
         public void GoDown(int desiredFloor)
         {
-            if(!DoorIsOpen)
+            if (DoorIsOpen == false && desiredFloor > 0 && (NumberOfLevels - desiredFloor) >= 1)
             {
-                CurrentLevel = desiredFloor - NumberOfLevels;
+                CurrentLevel -= (CurrentLevel - desiredFloor);
             }
         }
 

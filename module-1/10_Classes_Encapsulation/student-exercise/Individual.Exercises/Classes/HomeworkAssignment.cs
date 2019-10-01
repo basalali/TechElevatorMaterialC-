@@ -9,15 +9,11 @@ namespace Individual.Exercises.Classes
     public class HomeworkAssignment
     {
 
-        public void ChageMarks(int newNumber)
-        {
-            PossibleMarks = newNumber;
-        }
-
+        
 
         public int EarnedMarks { get; set; }
         public string SubmitterName { get; }
-        public int PossibleMarks { get; private set; }
+        public int PossibleMarks { get; } 
         public string LetterGrade
         {
             get
