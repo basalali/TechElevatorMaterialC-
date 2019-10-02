@@ -29,13 +29,10 @@ namespace TollBoothCalculator
             int totalMilesTraveled = 0;
             foreach (IVehicle item in myList)
             {
-
-
                 Random rnd = new Random();
                 int distance = rnd.Next(0, 100);
                 totalMilesTraveled = totalMilesTraveled + distance;
                 totalTollBoothRevenue = totalTollBoothRevenue + item.CalculateToll(distance);
-
 
                 Console.WriteLine(String.Format("{0, -20} {1,-15} ${2, -5} ", item.VehicleName(), distance, item.CalculateToll(distance)));
             }
@@ -44,7 +41,6 @@ namespace TollBoothCalculator
             Console.WriteLine();
             Console.WriteLine("Total Miles Traveled:  " + totalMilesTraveled);
             Console.WriteLine("Total TollBooth Revenue:  " + totalTollBoothRevenue);
-
 
             Console.ReadLine();
         }
