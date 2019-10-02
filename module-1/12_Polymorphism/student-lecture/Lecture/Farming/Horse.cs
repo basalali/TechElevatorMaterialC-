@@ -4,21 +4,24 @@ using System.Text;
 
 namespace Lecture.Farming
 {
-    public class Horse : FarmAnimal
+    public class Horse : IFarmAnimal
     {
         /// <summary>
         /// Creates a new horse.
         /// </summary>
         /// <param name="name">The name which the horse goes by.</param>
-        public Horse() : base("HORSE")
+        /// // the constructor for the calls the constructor for the base class
+        public Horse() 
         {
+            this.Name = "HORSE";
         }
+        public string Name { get; }
 
         /// <summary>
         /// The single noise the horse makes.
         /// </summary>
         /// <returns></returns>
-        public override string MakeSoundOnce()
+        public string MakeSoundOnce()
         {
             return "NEIGH";
         }
@@ -27,7 +30,7 @@ namespace Lecture.Farming
         /// The double noise the horse makes.
         /// </summary>
         /// <returns></returns>
-        public override string MakeSoundTwice()
+        public  string MakeSoundTwice()
         {
             return "NEIGH NEIGH";
         }
