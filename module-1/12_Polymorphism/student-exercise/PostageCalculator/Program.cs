@@ -25,7 +25,7 @@ namespace PostageCalculator
             }
 
             Console.WriteLine("What is the distance your package will travel?");
-            int usersMiles = Convert.ToDouble(Console.ReadLine();
+            int usersMiles = Int32.Parse(Console.ReadLine());
 
             List<IDeliveryDriver> deliveryOptions = new List<IDeliveryDriver>();
 
