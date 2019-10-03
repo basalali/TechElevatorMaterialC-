@@ -20,6 +20,45 @@ namespace TestableClasses.Classes.Tests
         //.IsTrue()
         //.IsNotNull()
         //.IsNull()
+        //makeAbba("Hi", "Bye") → "HiByeByeHi"	
+        // makeAbba("Yo", "Alice") → "YoAliceAliceYo"	
+        // makeAbba("What", "Up") → "WhatUpUpWhat"
+        [TestMethod]
+        public void MakeAbbaTest()                                        // act******
+        {
+
+            StringExercises stringExercises = new StringExercises();
+
+            string result = stringExercises.MakeAbba("Hi", "Bye"); // action*******
+
+            Assert.AreEqual("HiByeByeHi", result);                // assert***
+
+             result = stringExercises.MakeAbba("Yo", "Alice");
+
+            Assert.AreEqual("YoAliceAliceYo", result);
+
+            result = stringExercises.MakeAbba("What", "Up");
+
+            Assert.AreEqual("WhatUpUpWhat", result);
+
+        }
+
+        //makeOutWord("<<>>", "Yay") → "<<Yay>>"	
+        // makeOutWord("<<>>", "WooHoo") → "<<WooHoo>>"	
+        // makeOutWord("[[]]", "word") → "[[word]]"
+        [TestMethod]
+        public void MakeOutWord()
+        {
+
+            StringExercises testClass = new StringExercises();
+
+            string result = testClass.MakeOutWord("<<>>", "Yay"); // ACTION*****
+
+            Assert.AreEqual("<<Yay>>", result);
+
+
+
+        }
 
 
         
