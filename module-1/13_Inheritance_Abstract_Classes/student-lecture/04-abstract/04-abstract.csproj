@@ -6,8 +6,4 @@
     <RootNamespace>_04_abstract</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Farming\" />
-  </ItemGroup>
-
 </Project>
