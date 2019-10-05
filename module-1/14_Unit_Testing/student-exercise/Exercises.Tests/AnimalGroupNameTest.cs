@@ -50,6 +50,12 @@ namespace Exercises.Tests
             result = testClass.GetHerd("crocodile");
             Assert.AreEqual("Float", result);
 
+            result = testClass.GetHerd("BROOOO!! THIS IS INSANE!!!");
+            Assert.AreEqual("unknown", result);
+
+            result = testClass.GetHerd("");
+            Assert.AreEqual("unknown", result);
+
         }
     }
 }

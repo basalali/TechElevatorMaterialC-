@@ -16,14 +16,14 @@ namespace Exercises.Tests
 
                 CigarParty cigarsP = new CigarParty();
             
-                bool result = cigarsP.HaveParty(30, false);
+                bool result = cigarsP.HaveParty(46, false);
+                Assert.AreEqual(true, result);
+
+                result = cigarsP.HaveParty(700, true);
+                Assert.AreEqual(true, result);
+
+                result = cigarsP.HaveParty(10, true);
                 Assert.AreEqual(false, result);
-
-                result = cigarsP.HaveParty(50, false);
-                Assert.AreEqual(true, result);
-
-                result = cigarsP.HaveParty(70, true);
-                Assert.AreEqual(true, result);
 
               
 
