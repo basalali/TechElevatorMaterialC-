@@ -80,7 +80,7 @@ namespace Exercises.Tests
         }
 
         [TestMethod]
-        public void Fizz_test_divisble_by_3_Or_contains_3()
+        public void Fizz_test_divisible_by_3_Or_contains_3()
         {
             string expected = testFizzBuzz.FizzBuzz(83);
             Assert.AreEqual("Fizz", expected);
@@ -98,6 +98,16 @@ namespace Exercises.Tests
 
             expected = testFizzBuzz.FizzBuzz(51);
             Assert.AreEqual("Buzz", expected);
+        }
+
+        [TestMethod]
+        public void FizzBuzz_test_divisble_by_3and5_Or_contains_3and5()
+        {
+            string expected = testFizzBuzz.FizzBuzz(53);
+            Assert.AreEqual("FizzBuzz", expected);
+
+            expected = testFizzBuzz.FizzBuzz(35);
+            Assert.AreEqual("FizzBuzz", expected);
         }
     }
 }
