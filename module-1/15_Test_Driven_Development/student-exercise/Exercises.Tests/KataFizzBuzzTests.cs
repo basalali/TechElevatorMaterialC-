@@ -79,7 +79,15 @@ namespace Exercises.Tests
             Assert.AreEqual("", expected);
         }
 
+        [TestMethod]
+        public void Fizz_test_divisble_by_3_Or_contains_3()
+        {
+            string expected = testFizzBuzz.FizzBuzz(355);
+            Assert.AreEqual("Fizz", expected);
 
+            expected = testFizzBuzz.FizzBuzz(3908);
+            Assert.AreEqual("Fizz", expected);
+        }
 
     }
 }
