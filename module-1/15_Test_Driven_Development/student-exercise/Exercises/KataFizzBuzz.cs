@@ -12,7 +12,7 @@ namespace Exercises
         {
             string result = "";
             if (number >= 1 && number <= 100)
-            {             
+            {
                 if (number % 3 == 0 && number % 5 == 0)
                 {
                     return number.ToString("FizzBuzz");
@@ -23,7 +23,8 @@ namespace Exercises
                     return number.ToString("Buzz");
 
                 }
-                else if (number % 3 == 0)
+                else if (number % 3 == 0 || number.ToString().Contains("3"))
+
                 {
                     return number.ToString("Fizz");
 

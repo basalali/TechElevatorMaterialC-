@@ -82,10 +82,10 @@ namespace Exercises.Tests
         [TestMethod]
         public void Fizz_test_divisble_by_3_Or_contains_3()
         {
-            string expected = testFizzBuzz.FizzBuzz(355);
+            string expected = testFizzBuzz.FizzBuzz(83);
             Assert.AreEqual("Fizz", expected);
 
-            expected = testFizzBuzz.FizzBuzz(3908);
+            expected = testFizzBuzz.FizzBuzz(34);
             Assert.AreEqual("Fizz", expected);
         }
 
