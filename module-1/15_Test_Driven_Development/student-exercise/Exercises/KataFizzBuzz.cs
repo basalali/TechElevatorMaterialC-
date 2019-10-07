@@ -16,7 +16,13 @@ namespace Exercises
 
 
             }
-           
+            else if ( number % 5 == 0)
+            {
+                return number.ToString("Buzz");
+
+
+            }
+
 
 
 

@@ -44,7 +44,7 @@ namespace Exercises.Tests
             string expected = testFizzBuzz.FizzBuzz(10);
             Assert.AreEqual("Buzz", expected);
 
-            expected = testFizzBuzz.FizzBuzz(15);
+            expected = testFizzBuzz.FizzBuzz(25);
             Assert.AreEqual("Buzz", expected);
 
         }
