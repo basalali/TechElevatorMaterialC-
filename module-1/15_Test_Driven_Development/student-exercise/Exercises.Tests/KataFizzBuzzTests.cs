@@ -52,13 +52,21 @@ namespace Exercises.Tests
         [TestMethod]
         public void Fizz_test()
         {
-
             string expected = testFizzBuzz.FizzBuzz(9);
             Assert.AreEqual("Fizz", expected);
 
             expected = testFizzBuzz.FizzBuzz(12);
             Assert.AreEqual("Fizz", expected);
+        }
 
+        [TestMethod]
+        public void All_numbers_1_to_100()
+        {
+            string expected = testFizzBuzz.FizzBuzz(9);
+            Assert.AreEqual("9", expected);
+
+            expected = testFizzBuzz.FizzBuzz(99);
+            Assert.AreEqual("99", expected);
         }
 
 
