@@ -18,7 +18,7 @@ namespace Exercises
                     return number.ToString("FizzBuzz");
 
                 }
-                else if (number % 5 == 0)
+                else if (number % 5 == 0 || number.ToString().Contains("5"))
                 {
                     return number.ToString("Buzz");
 
