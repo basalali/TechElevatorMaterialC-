@@ -62,11 +62,11 @@ namespace Exercises.Tests
         [TestMethod]
         public void All_numbers_1_to_100()
         {
-            string expected = testFizzBuzz.FizzBuzz(9);
-            Assert.AreEqual("9", expected);
+            string expected = testFizzBuzz.FizzBuzz(8);
+            Assert.AreEqual("8", expected);
 
-            expected = testFizzBuzz.FizzBuzz(99);
-            Assert.AreEqual("99", expected);
+            expected = testFizzBuzz.FizzBuzz(14);
+            Assert.AreEqual("14", expected);
         }
 
 

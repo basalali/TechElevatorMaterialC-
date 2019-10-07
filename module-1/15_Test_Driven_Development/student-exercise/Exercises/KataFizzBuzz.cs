@@ -10,35 +10,32 @@ namespace Exercises
     {
         public string FizzBuzz(int number)
         {
-            if (number % 3 == 0 && number % 5 ==0)
-            {
-                return number.ToString("FizzBuzz");
+            string result = "";
+            if (number >= 1 && number <= 100)
+            {             
+                if (number % 3 == 0 && number % 5 == 0)
+                {
+                    return number.ToString("FizzBuzz");
 
+                }
+                else if (number % 5 == 0)
+                {
+                    return number.ToString("Buzz");
 
+                }
+                else if (number % 3 == 0)
+                {
+                    return number.ToString("Fizz");
+
+                }
+                else
+                {
+                    result = number.ToString();
+                }
+               
             }
-            else if ( number % 5 == 0)
-            {
-                return number.ToString("Buzz");
 
-
-            }
-            else if (number % 3 == 0)
-            {
-                return number.ToString("Fizz");
-
-
-            }
-
-
-
-
-
-
-
-
-
-
-            return "";
+            return result;
         }
 
     }
