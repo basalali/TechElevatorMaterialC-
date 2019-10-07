@@ -89,5 +89,15 @@ namespace Exercises.Tests
             Assert.AreEqual("Fizz", expected);
         }
 
+
+        [TestMethod]
+        public void Buzz_test_divisble_by_5_Or_contains_5()
+        {
+            string expected = testFizzBuzz.FizzBuzz(59);
+            Assert.AreEqual("Buzz", expected);
+
+            expected = testFizzBuzz.FizzBuzz(51);
+            Assert.AreEqual("Buzz", expected);
+        }
     }
 }
