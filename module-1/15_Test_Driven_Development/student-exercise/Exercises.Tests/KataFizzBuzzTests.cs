@@ -37,7 +37,20 @@ namespace Exercises.Tests
 
         }
 
-        
+        [TestMethod]
+        public void Buzz_test()
+        {
+
+            string expected = testFizzBuzz.FizzBuzz(10);
+            Assert.AreEqual("Buzz", expected);
+
+            expected = testFizzBuzz.FizzBuzz(15);
+            Assert.AreEqual("Buzz", expected);
+
+        }
+
+
+
 
     }
 }
