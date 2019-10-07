@@ -69,6 +69,15 @@ namespace Exercises.Tests
             Assert.AreEqual("14", expected);
         }
 
+        [TestMethod]
+        public void Any_number_outside_of_range()
+        {
+            string expected = testFizzBuzz.FizzBuzz(500);
+            Assert.AreEqual("", expected);
+
+            expected = testFizzBuzz.FizzBuzz(1774);
+            Assert.AreEqual("", expected);
+        }
 
 
 
