@@ -47,6 +47,8 @@ namespace Lecture.Aids
                 Console.WriteLine("Error reading the file");
                 Console.WriteLine(e.Message);
             }
+
+            Console.ReadLine();
         }
 
 
