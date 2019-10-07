@@ -23,6 +23,17 @@ namespace Exercises.Tests
         public void Method_exists_test()
         {
 
+        }
+
+        [TestMethod]
+        public void FizzBuzz3_15_test()
+        {
+
+            string expected = testFizzBuzz.FizzBuzz(15);
+            Assert.AreEqual("FizzBuzz", expected);
+
+            expected = testFizzBuzz.FizzBuzz(60);
+            Assert.AreEqual("FizzBuzz", expected);
 
         }
 
