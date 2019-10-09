@@ -18,6 +18,9 @@ namespace Exercises.Tests
              actual = testClass.GetBits("qwertyuiop");
             Assert.AreEqual("qetuo", actual);
 
+            actual = testClass.GetBits("");
+            Assert.AreEqual("", actual);
+
 
         }
 

@@ -12,14 +12,18 @@ namespace Exercises.Tests
             NonStart testClass = new NonStart();
 
             string actual = testClass.GetPartialString("Tech", "Elevator");
-
             Assert.AreEqual("echlevator", actual);
 
             actual = testClass.GetPartialString("Iiloveto", "Ccode");
-
             Assert.AreEqual("ilovetocode", actual);
 
-           
+            actual = testClass.GetPartialString("", "rams");
+            Assert.AreEqual("ams", actual);
+
+            actual = testClass.GetPartialString("lions", "");
+            Assert.AreEqual("ions", actual);
+
+
         }
 
 

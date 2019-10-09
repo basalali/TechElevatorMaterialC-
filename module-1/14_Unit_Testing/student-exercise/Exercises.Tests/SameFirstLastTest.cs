@@ -22,6 +22,9 @@ namespace Exercises.Tests
 
             Assert.AreEqual(false, actual);
 
+            actual = testClass.IsItTheSame(new int[] {});
+
+            Assert.AreEqual(false, actual);
 
 
 

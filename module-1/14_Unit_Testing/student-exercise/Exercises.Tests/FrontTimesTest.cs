@@ -20,10 +20,13 @@ namespace Exercises.Tests
 
             Assert.AreEqual("C#CC#C", result);
 
+            result = testClass.GenerateString("", 2);
+
+            Assert.AreEqual("", result);
 
 
         }
-        
+
 
     }
 }

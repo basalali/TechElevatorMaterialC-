@@ -23,6 +23,8 @@ namespace Exercises.Tests
             result = testClass.GetLucky(new int[] { 4, 3, 7 });
             Assert.AreEqual(false, result);
 
+            result = testClass.GetLucky(new int[] {});
+            Assert.IsTrue(result);
 
 
 
