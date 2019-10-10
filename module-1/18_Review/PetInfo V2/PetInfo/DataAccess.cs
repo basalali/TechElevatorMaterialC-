@@ -39,17 +39,6 @@ namespace PetInfo
             List<Pet> result = new List<Pet>();
 
 
-
-
-
-
-
-
-
-
-
-
-
             return result;
         }
 
