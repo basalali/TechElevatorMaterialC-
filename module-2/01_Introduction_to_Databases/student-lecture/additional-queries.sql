@@ -1,10 +1,20 @@
 -- The name and population of all cities in the USA with a population of greater than 1 million people
 
+SELECT * FROM city
+WHERE countrycode = 'USA' AND population > 1000000
+
 -- The name and population of all cities in China with a population of greater than 1 million people
 
+SELECT * FROM city
+WHERE countrycode = 'CHN' AND population > 1000000
+
+
 -- The name and region of all countries in North or South America
+
   
 -- The name, continent, and head of state of all countries whose form of government is a monarchy
+SELECT name, continent, headofstate  FROM country
+WHERE governmentform LIKE '%Monarchy%'
 
 -- The name, country code, and population of all cities with a population less than one thousand people
 
@@ -19,3 +29,5 @@
 -- The name and average life expectancy of all countries in southern regions for which an average life expectancy has been provided (i.e. not equal to null)
 
 -- The name, continent, GNP, and average life expectancy of all countries in Africa or Asia that have an average life expectancy of at least 70 years and a GNP between $1 million and $100 million dollars
+SELECT name, continent, gnp, lifeexpectancy  FROM Country
+WHERE (continent = 'Africa' OR continent = 'Asia') AND lifeexpectancy >= 70 AND (gnp >= 1000000 AND gnp <= 100000000)
