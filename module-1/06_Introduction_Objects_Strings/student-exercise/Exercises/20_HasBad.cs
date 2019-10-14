@@ -28,7 +28,6 @@ namespace Exercises
                 {
                     return true;
                 }
-
                 return false;
             
         }
