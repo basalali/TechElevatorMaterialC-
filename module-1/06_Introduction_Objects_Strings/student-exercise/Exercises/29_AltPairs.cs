@@ -16,12 +16,20 @@ namespace Exercises
          */
         public string AltPairs(string str)
         {
+            string altPairs = str;
+            string result = "";
 
-           
+            for (int i = 0; i < altPairs.Length; i += 4)
+            {
+                result = String.Concat(result, altPairs.Substring(i, 1));
 
-
-
-            return null;
+                if (i + 1 < altPairs.Length)
+                {
+                    result = String.Concat(result, altPairs.Substring(i + 1, 1));                 
+                }
+            }
+            return result;
+        
         }
     }
 }

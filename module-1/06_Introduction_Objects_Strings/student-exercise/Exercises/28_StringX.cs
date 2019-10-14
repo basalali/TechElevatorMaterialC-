@@ -17,7 +17,17 @@ namespace Exercises
         */
         public string StringX(string str)
         {
-            return null;
+            string result = str;
+            
+            if (str.IndexOf('x') == 0 && str.Contains('x') == true && str.Length > 1)
+            {
+                result = ($"x{str.Replace("x", "")}x");
+            }          
+           else if (str.IndexOf("x") != 0 && str.Contains('x') == true && str.IndexOf("x") != str.Length - 1)
+            {
+                result = str.Replace("x", "");
+            }         
+            return result;
         }
     }
 }

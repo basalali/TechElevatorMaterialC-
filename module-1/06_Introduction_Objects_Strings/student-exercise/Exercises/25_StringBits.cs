@@ -16,14 +16,12 @@ namespace Exercises
          */
         public string StringBits(string str)
         {
-            string output = "";
-            for (int i = 0; i < str.Length; i+=2)
+            string answer = "";
+            for (int i = 0; i < str.Length; i += 2)
             {
-                    output += str.Substring(i, i + 1);          
+                answer += string.Concat(str[i]);
             }
-
-            return output;
-
+            return answer;
         }
     }
 }
