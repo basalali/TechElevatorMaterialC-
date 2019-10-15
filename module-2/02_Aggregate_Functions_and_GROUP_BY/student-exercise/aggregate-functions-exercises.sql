@@ -14,52 +14,107 @@
 -- name. 
 -- (19 rows)
 
+SELECT (name + ', '  + district) name_and_state FROM City
+WHERE district IN ('Pennsylvania', 'West Virginia', 'Kentucky', 'Indiana', 'Michigan') AND countrycode = 'USA'
+ORDER BY name, district
+
+
 -- 2. The name, country code, and region of all countries in Africa.  The name and
 -- country code should be returned as a single column named country_and_code 
 -- and should contain values such as ‘Angola (AGO)’ 
 -- (58 rows)
 
+
+SELECT (name + ' ' + '(' + code + ')') country_and_code, region FROM country
+WHERE continent = 'Africa'
+
+
+
 -- 3. The per capita GNP (i.e. GNP multipled by 1000000 then divided by population) of all countries in the 
 -- world sorted from highest to lowest. Recall: GNP is express in units of one million US Dollars 
 -- (highest per capita GNP in world: 37459.26)
 
+SELECT * FROM country
+
+SELECT ( gnp*1000000/population) per_Capita_GNP FROM country 
+WHERE population > 1 AND gnp > 1
+ORDER by per_Capita_GNP DESC
+
+ 
 -- 4. The average life expectancy of countries in South America.
 -- (average life expectancy in South America: 70.9461)
+
+SELECT * FROM country
+
+SELECT AVG(lifeexpectancy) FROM country 
+WHERE continent = 'South America'
 
 -- 5. The sum of the population of all cities in California.
 -- (total population of all cities in California: 16716706)
 
+SELECT SUM(population) FROM city 
+WHERE countrycode = 'USA' AND district = 'California'
+
 -- 6. The sum of the population of all cities in China.
 -- (total population of all cities in China: 175953614)
 
+
+SELECT SUM(population) sum FROM city 
+WHERE countrycode = 'CHN' 
+
+
 -- 7. The maximum population of all countries in the world.
 -- (largest country population in world: 1277558000)
+SELECT MAX(population) FROM country
+
 
 -- 8. The maximum population of all cities in the world.
 -- (largest city population in world: 10500000)
+SELECT MAX(population) FROM city
 
 -- 9. The maximum population of all cities in Australia.
 -- (largest city population in Australia: 3276207)
+SELECT MAX(population) FROM city
+WHERE countrycode = 'AUS'
+
 
 -- 10. The minimum population of all countries in the world.
 -- (smallest_country_population in world: 50)
+SELECT Min(population) minPOP FROM country
+WHERE population > 0
+
 
 -- 11. The average population of cities in the United States.
 -- (avgerage city population in USA: 286955.3795)
 
+SELECT (avg(population)) avgPOP FROM city
+WHERE countrycode = 'USA'
+
 -- 12. The average population of cities in China.
 -- (average city population in China: 484720.6997 approx.)
+SELECT avg(population) avgPOP FROM city
+WHERE countrycode = 'CHN'
 
 -- 13. The surface area of each continent ordered from highest to lowest.
 -- (largest continental surface area: 31881000, "Asia")
+
+SELECT continent, Sum(surfacearea) sum FROM country
+Group BY Continent
+ORDER BY sum DESC
 
 -- 14. The highest population density (population divided by surface area) of all 
 -- countries in the world. 
 -- (highest population density in world: 26277.7777)
 
+SELECT (population/surfacearea) population_density FROM Country
+ORDER BY population_density DESC
+
 -- 15. The population density and life expectancy of the top ten countries with the 
 -- highest life expectancies in descending order. 
 -- (highest life expectancies in world: 83.5, 166.6666, "Andorra")
+
+SELECT Top 10 lifeexpectancy, (population/surfacearea) population_density, name FROM Country
+ORDER BY lifeexpectancy DESC
 
 -- 16. The difference between the previous and current GNP of all the countries in 
 -- the world ordered by the absolute value of the difference. Display both 
