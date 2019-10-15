@@ -6,14 +6,14 @@ namespace FizzWriter
     {
         static void Main(string[] args)
         {
-            
-            string directory = @"..\..\..\..";
+            //string directory = Directory.GetCurrentDirectory();
+           
             string fileName = "FizzBuzz.txt";
-            string fullPath = Path.Combine(directory, fileName);
+            //string fullPath = Path.Combine(directory, fileName);
 
             try
             {
-                using (StreamWriter sw = new StreamWriter(fullPath, false))
+                using (StreamWriter sw = new StreamWriter(fileName, false))
                 {
                     for (int i = 1; i <= 300; i++)
                     {
