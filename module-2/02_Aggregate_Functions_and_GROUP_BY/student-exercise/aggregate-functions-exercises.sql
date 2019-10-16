@@ -80,7 +80,8 @@ WHERE countrycode = 'AUS'
 
 -- 10. The minimum population of all countries in the world.
 -- (smallest_country_population in world: 50)
-SELECT Min(population) minPOP FROM country
+
+SELECT Min(population) samllest_country_population FROM country
 WHERE population > 0
 
 
