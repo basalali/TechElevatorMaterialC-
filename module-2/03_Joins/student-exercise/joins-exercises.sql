@@ -133,15 +133,60 @@ GROUP BY a.address, s.store_id
 
 -- 16. The top ten film titles by number of rentals
 -- (#1 should be “BUCKET BROTHERHOOD” with 34 rentals and #10 should have 31 rentals)
+SELECT TOP 10 title, COUNT(r.rental_id) count FROM film f
+JOIN inventory i ON i.film_id = f.film_id
+JOIN rental r ON r.inventory_id = i.inventory_id
+GROUP BY f.title
+ORDER BY count DESC
+
+
 
 -- 17. The top five film categories by number of rentals 
 -- (#1 should be “Sports” with 1179 rentals and #5 should be “Family” with 1096 rentals)
 
+SELECT TOP 5 c.name, count(r.rental_id) count FROM film f
+JOIN film_category fc ON fc.film_id = f.film_id
+JOIN category c ON fc.category_id = c.category_id
+JOIN inventory i ON i.film_id = f.film_id
+JOIN rental r ON r.inventory_id = i.inventory_id
+GROUP by c.name
+ORDER by count DESC
+
+
 -- 18. The top five Action film titles by number of rentals 
 -- (#1 should have 30 rentals and #5 should have 28 rentals)
 
+SELECT TOP 5 f.title, count(r.rental_id) count FROM film f
+JOIN film_category fc ON fc.film_id = f.film_id
+JOIN category c ON fc.category_id = c.category_id
+JOIN inventory i ON i.film_id = f.film_id
+JOIN rental r ON r.inventory_id = i.inventory_id
+WHERE c.name = 'Action'
+GROUP by f.title
+ORDER BY count DESC
+
+
+
 -- 19. The top 10 actors ranked by number of rentals of films starring that actor 
 -- (#1 should be “GINA DEGENERES” with 753 rentals and #10 should be “SEAN GUINESS” with 599 rentals)
+SELECT TOP 10 a.first_name + ' ' + a.last_name 'Actor Name', count(r.rental_id) count FROM rental r
+JOIN inventory i ON r.inventory_id = i.inventory_id
+JOIN film f ON f.film_id = i.film_id
+JOIN film_actor fa ON fa.film_id = f.film_id
+JOIN actor a ON a.actor_id = fa.actor_id
+GROUP BY a.first_name + ' ' + a.last_name
+ORDER BY count DESC
+
 
 -- 20. The top 5 “Comedy” actors ranked by number of rentals of films in the “Comedy” category starring that actor 
 -- (#1 should have 87 rentals and #5 should have 72 rentals)
+SELECT TOP 5 a.first_name + ' ' + a.last_name 'Actor Name', count(r.rental_id) count FROM rental r
+JOIN inventory i ON r.inventory_id = i.inventory_id
+JOIN film f ON f.film_id = i.film_id
+JOIN film_actor fa ON fa.film_id = f.film_id
+JOIN actor a ON a.actor_id = fa.actor_id
+JOIN film_category fc ON fc.film_id = f.film_id
+JOIN category c ON fc.category_id = c.category_id
+WHERE c.name = 'Comedy'
+GROUP BY a.first_name + ' ' + a.last_name
+ORDER BY count DESC
