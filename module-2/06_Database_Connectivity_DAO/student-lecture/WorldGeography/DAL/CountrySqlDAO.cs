@@ -16,7 +16,7 @@ namespace WorldGeography.DAL
         public CountrySqlDAO(string databaseconnectionString)
         {
             connectionString = databaseconnectionString;
-        }        
+        }
 
         public IList<Country> GetCountries()
         {

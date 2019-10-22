@@ -28,8 +28,8 @@ namespace WorldGeography
             #endregion
 
             ICityDAO cityDAO = new CitySqlDAO(connectionString);
-            ICountryDAO countryDAO = null;
-            ILanguageDAO languageDAO = null;
+            ICountryDAO countryDAO = new CountrySqlDAO(connectionString);
+            ILanguageDAO languageDAO = new LanguageSqlDAO(connectionString);
 
             WorldGeographyCLI cli = new WorldGeographyCLI(cityDAO, countryDAO, languageDAO);
             cli.RunCLI();

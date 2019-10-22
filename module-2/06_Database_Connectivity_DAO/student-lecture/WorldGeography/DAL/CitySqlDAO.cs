@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using WorldGeography.Models;
+using System.IO;
 
 namespace WorldGeography.DAL
 {
     public class CitySqlDAO : ICityDAO
     {
+        private string sql_GetCitiesByCountryCode = " SELECT * FROM city WHERE countrycode = @countryCode";
         private string connectionString;
 
         /// <summary>
@@ -25,7 +27,50 @@ namespace WorldGeography.DAL
 
         public IList<City> GetCitiesByCountryCode(string countryCode)
         {
-            throw new NotImplementedException();
+
+            IList<City> cities = new List<City>();
+            try
+            {
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(sql_GetCitiesByCountryCode, conn))
+                    {
+
+                        cmd.Parameters.AddWithValue("@countryCode", countryCode);
+
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+
+                        while (reader.Read())
+                        {
+                            City city = new City();
+                            city.CityId = Convert.ToInt32(reader["id"]);
+                            city.Name = Convert.ToString(reader["name"]);
+                            city.District = Convert.ToString(reader["district"]);
+                            city.CountryCode = Convert.ToString(reader["countrycode"]);
+                            city.Population = Convert.ToInt32(reader["population"]);
+
+                            cities.Add(city);
+                           
+                        }
+                    
+                    }
+               
+                }
+          
+            }
+         
+            catch
+            {
+
+                cities = new List<City>();
+            }
+            return cities;
+
         }
 
     }
