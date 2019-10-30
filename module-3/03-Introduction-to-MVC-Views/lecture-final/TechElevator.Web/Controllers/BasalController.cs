@@ -6,14 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TechElevator.Web.Controllers
 {
-    public class HomeController : Controller
+    public class BasalController : Controller
     {
         public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Hello()
         {
             return View();
         }
