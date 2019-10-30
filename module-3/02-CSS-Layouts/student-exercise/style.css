@@ -12,3 +12,88 @@ html {
     font-size: 16px;
 }
 
+/* tech-elevator image*/
+header img{
+    width: 400px;
+    margin-right: 8%;
+    margin-left: 8%;
+}
+/* student smith text*/
+.headline {
+    grid-auto-columns: auto;
+    width: 600px;
+    font-size: 50px;
+    color: #505355;
+    margin-top: 0%;
+    margin-right: 8%;
+    margin-left: 8%;
+    
+}
+#student-picture img{
+    border-radius: 50%;
+    max-width: 300px;
+}
+/* grid stuff*/
+#student-grid 
+{
+display: grid;
+grid-template-columns: 1fr, 1fr, 1fr;
+grid-template-rows: 1fr, 1fr, 1fr, 1fr;
+grid-gap:50%, 20%;
+margin-right: 8%;
+margin-left: 8%;
+}
+
+#student-picture 
+{
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row: 1;
+}
+
+#student-quote 
+{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row: 1;
+}
+#student-profile 
+{
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+}
+#student-contact
+{
+    grid-column-start: 3;
+    grid-column-end: 3;
+    padding-left: 80px;
+}
+
+
+#experience {
+    display: flex;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row: 3/4;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+
+#experience div 
+{
+
+    width: 30%;
+  
+
+}
+#experience i{
+
+    color: #00ADEE;
+}
+footer {
+    margin-right: 8%;
+    margin-left: 8%;
+}
