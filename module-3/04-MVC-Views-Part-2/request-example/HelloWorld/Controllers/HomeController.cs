@@ -13,6 +13,7 @@ namespace HelloWorld.Controllers
         public IActionResult Index()
         {
             var body = Request.Body;
+            var headers = Request.Headers;
             var cookies = Request.Cookies;
             var path = Request.Path;
             var args = Request.Query;
