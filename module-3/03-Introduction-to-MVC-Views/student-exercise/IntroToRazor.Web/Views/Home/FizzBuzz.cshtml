@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "FizzBuzz";
+    int max = (int)ViewData["number"];
 }
 
 <nav id="page-options">
@@ -10,6 +11,26 @@
     </ul>
 </nav>
 
-@*
-    REPLACE THIS COMMENT SECTION WITH YOUR UNORDERED LIST
-*@
+<h1>@max</h1>
+
+<ul id="fizzbuzz">
+    @for (int i = 1; i <= max; i++)
+    {
+        if (i % 15 == 0)
+        {
+            <li class="fizzbuzz">FizzBuzz!</li>
+        }
+        else if (i % 5 == 0)
+        {
+            <li class="buzz">Buzz!</li>
+        }
+        else if (i % 3 == 0)
+        {
+            <li class="fizz">Fizz!</li>
+        }
+        else
+        {
+            <li>@i</li>
+        }
+    }
+</ul>
