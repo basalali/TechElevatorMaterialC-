@@ -12,7 +12,7 @@ namespace TechElevator.Web
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration) // john changed lines 15-20
         {
             Configuration = configuration;
         }
@@ -41,7 +41,7 @@ namespace TechElevator.Web
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-
+            // john inserted these lines, 50-52 
             SqlConnectionString = Configuration["ConnectionStrings:SqlConnectionString"];
             FilePath = Configuration["ConnectionStrings:FilePath"];
             Source = Configuration["ConnectionStrings:Source"];
