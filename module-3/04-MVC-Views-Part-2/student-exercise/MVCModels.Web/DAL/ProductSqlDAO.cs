@@ -112,7 +112,7 @@ namespace MVCModels.Web.DAL
 
         public Product GetById(int id)
         {
-            Product product = null;
+            Product product = null;       
 
             try
             {

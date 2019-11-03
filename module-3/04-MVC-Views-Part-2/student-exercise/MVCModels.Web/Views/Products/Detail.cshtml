@@ -1,4 +1,5 @@
-﻿@model Product
+﻿
+@model Product
 
 @{
     ViewData["Title"] = "Detail";
@@ -7,42 +8,81 @@
 
 <!-- Container for the Product -->
 <div id="product-detail">
-    <img src="/images/product-images/grey-sofa.jpg" />
+
+    <img src="~/images/product-images/@Model.ImageName" />
     <div class="product-description">
         <h3>
-            esg
+            @Model.Name
         </h3>
 
         <!-- .filled will make the star solid -->
         <div class="rating">
-            @*@if (Model.AverageRating < 2)
-            {*@
-                <span class="filled">&#9734;</span>
-            @*  *@
 
-            <span class="filled">&#9734;</span>
-            <span>&#9734;</span>
-            <span>&#9734;</span>
-            <span>&#9734;</span>
+            @switch (Convert.ToInt32(@Model.AverageRating))
+            {
+
+                case 1:
+                    <span class="filled">&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    break;
+                case 2:
+                    <span class="filled">&#9734;</span>
+                    <span class="filled">&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    break;
+                case 3:
+                    <span class="filled">&#9734;</span>
+                    <span class="filled">&#9734;</span>
+                    <span class="filled">&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    break;
+                case 4:
+                    <span class="filled">&#9734;</span>
+                    <span class="filled">&#9734;</span>
+                    <span class="filled">&#9734;</span>
+                    <span class="filled">&#9734;</span>
+                    <span>&#9734;</span>
+                    break;
+                case 5:
+                    <span class="filled">&#9734;</span>
+                    <span class="filled">&#9734;</span>
+                    <span class="filled">&#9734;</span>
+                    <span class="filled">&#9734;</span>
+                    <span class="filled">&#9734;</span>
+                    break;
+                default:
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    break;
+            }
         </div>
-        @*@if (Model.RemainingStock <= 5)
-        {*@
+        @if (Model.RemainingStock > 0 && Model.RemainingStock <=5)
+        {
             <!-- Include this if the product has a Remaining Stock of 5 or less -->
-            <p class="alert-remaining">BUY NOW! Only 4 left!</p>
-        @*}*@
-        <p class="description">@*@Model.Description*@</p>
-        <p class="price">@*@Model.Price*@</p>
-        @*@if (Model.RemainingStock > 5)
-        {*@
+            <p class="alert-remaining">BUY NOW! Only @Model.RemainingStock left!</p>
+        }
+        <p class="description">@Model.Description</p>
+        <p class="price">@Model.Price</p>
+        @if (Model.RemainingStock > 0)
+        {
 
             <!-- If item is in stock -->
             <button class="action">Add to Cart</button>
-        @*}
+        }
         @if (Model.RemainingStock == 0)
-        {*@
+        {
             <!-- OR if item is out of stock -->
             <button disabled>Sold Out</button>;
-        @*}*@
+        }
 
     </div>
 </div>

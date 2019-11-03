@@ -43,7 +43,7 @@
                     <div class="tile ">
 
                         <!-- Link to the Detail page using the product id (e.g. Products/Detail/1) -->
-                        <a class="product-image" href="#">
+                        <a class="product-image" asp-action="Detail" asp-route-id="@item.Id">
                             <img src="/images/product-images/@item.ImageName" />
                         </a>
                         <div class="details">
@@ -106,7 +106,7 @@
                     </div>
                 }
 
-                @if (item.IsTopSeller)
+                @if (item.IsTopSeller && item.RemainingStock > 0)
                 {
                     <div class="tile ">
 
@@ -116,7 +116,7 @@
 
 
                         <!-- Link to the Detail page using the product id (e.g. Products/Detail/1) -->
-                        <a class="product-image" href="#">
+                        <a class="product-image" asp-action="Detail" asp-route-id="@item.Id">
                             <img src="/images/product-images/@item.ImageName" />
                         </a>
                         <div class="details">
@@ -177,7 +177,7 @@
                             {
                                 <span class="product-alert">Only @item.RemainingStock left!</span>
                             }
-                            <p class="price">@item.Price</p>
+                            <p class="price">$@item.Price</p>
                         </div>
 
 
@@ -193,7 +193,7 @@
                             <span class="banner">Sold Out</span>
 
                         <!-- Link to the Detail page using the product id (e.g. Products/Detail/1) -->
-                        <a class="product-image" href="#">
+                        <a class="product-image" asp-action="Detail" asp-route-id="@item.Id">
                             <img src="/images/product-images/@item.ImageName" />
                         </a>
                         <div class="details">
@@ -249,7 +249,7 @@
                                 }
                             </div>
 
-                            <p class="price">@item.Price</p>
+                            <p class="price">$@item.Price</p>
                         </div>
                     </div>
                 }
