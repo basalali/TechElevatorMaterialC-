@@ -1,0 +1,18 @@
+﻿@model Customer
+@{
+    ViewData["Title"] = "GetForm";
+}
+
+
+<form asp-controller="Customers" asp-action="SearchResult" method="get">
+     Name
+    <input type="text" name="FirstName" />
+     Sort By
+    <select name="SortBy">
+        <option value="email">Email</option>
+        <option value="active">Active</option>
+        <option value="last_name">Last Name</option>
+    </select>
+    <input type="submit" value="search" /> <br /><br />
+</form>
+

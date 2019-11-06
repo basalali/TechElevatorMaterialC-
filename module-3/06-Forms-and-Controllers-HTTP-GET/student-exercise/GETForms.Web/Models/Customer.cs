@@ -26,5 +26,7 @@ namespace GETForms.Web.Models
         /// The customer's active status
         /// </summary>
         public bool IsActive { get; set; }
+
+        public string SortBy { get; set; }
     }
 }

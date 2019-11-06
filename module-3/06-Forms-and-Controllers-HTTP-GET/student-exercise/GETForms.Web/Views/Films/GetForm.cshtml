@@ -3,12 +3,12 @@
     ViewData["Title"] = "GetForm";
 }
 
-<form asp-action="SearchResult" method="get">
+<form asp-controller ="Films" asp-action="SearchResult" method="get">
     Minimum Length:
-    <input type="text" name="@Model.MinLength" />
+    <input type="text" name="MinLength" />
     Maximum Length:
-    <input type="text" name="@Model.MaxLength" />
-    <select name="@Model.Genre">
+    <input type="text" name="MaxLength" />
+    <select name="Genre">
         <option value="Action">Action</option>
         <option value="Animation">Animation</option>
         <option value="Children">Children</option>

@@ -38,6 +38,6 @@ namespace GETForms.Web.Models
         public int MinLength { get; set; }
 
 
-        public int MaxLength { get; set; }
+        public int MaxLength { get; set; } = 10000;
     }
 }

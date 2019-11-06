@@ -9,7 +9,7 @@ namespace GETForms.Web.DAL
 {
     public class CustomerDAO : ICustomerDAO
     {
-        private string connectionString;
+        private string connectionString = "Data Source=.\\sqlexpress;Initial Catalog = dvdstore; Integrated Security = True";
 
         public CustomerDAO(string connectionString)
         {
@@ -24,7 +24,43 @@ namespace GETForms.Web.DAL
         /// <returns></returns>
         public IList<Customer> SearchForCustomers(string search, string sortBy)
         {
-            throw new NotImplementedException();
+            IList<Customer> customers = new List<Customer>();
+
+            string customerSearchSql = "SELECT * from customer WHERE last_name LIKE @search OR first_name LIKE @search ORDER BY ";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                customerSearchSql += sortBy;
+                SqlCommand cmd = new SqlCommand(customerSearchSql, conn);
+
+                cmd.Parameters.AddWithValue("@search","%" + search + "%");
+
+
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    customers.Add(MapRowToCustomer(reader));
+                }
+            }
+
+            return customers;
+
         }
+
+        private Customer MapRowToCustomer(SqlDataReader reader)
+        {
+            return new Customer()
+            {
+                FirstName = Convert.ToString(reader["first_name"]),
+                LastName = Convert.ToString(reader["last_name"]),
+                Email = Convert.ToString(reader["email"]),
+                IsActive = Convert.ToBoolean(reader["activebool"]),
+            };
+        }
+
+
+
     }
 }
