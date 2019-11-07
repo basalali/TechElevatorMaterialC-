@@ -45,12 +45,18 @@ namespace SessionCart.Web.Controllers
 
         public ActionResult Index()
         {
+            string sessionId = HttpContext.Session.Id;
+            ViewBag.SessionId = sessionId;
+
             IList<Product> products = productDao.GetProducts();
             return View(products);
         }
 
         public ActionResult AddToCart(int id) //productId
         {
+            string sessionId = HttpContext.Session.Id;
+            ViewBag.SessionId = sessionId;
+
             List<int> result = AddToList(id);
             return View(result);
         }

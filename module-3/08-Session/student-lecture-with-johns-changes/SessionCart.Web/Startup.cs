@@ -36,7 +36,7 @@ namespace SessionCart.Web
             services.AddSession(options =>
             {
                 // Sets session expiration to 20 minuates
-                options.IdleTimeout = TimeSpan.FromMinutes(1);
+                options.IdleTimeout = TimeSpan.FromMinutes(20);
                 options.Cookie.HttpOnly = true;
             });
             #endregion
