@@ -8,8 +8,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SessionCart.Web.DAL;
 
-namespace TempDataAndSession
+namespace SessionCart.Web
 {
     public class Startup
     {
@@ -26,10 +27,9 @@ namespace TempDataAndSession
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => false;
+                options.CheckConsentNeeded = context => false; // set false for Session
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
 
             #region needed for session
             services.AddDistributedMemoryCache();
@@ -40,6 +40,9 @@ namespace TempDataAndSession
                 options.Cookie.HttpOnly = true;
             });
             #endregion
+
+            services.AddTransient<IProductDAO, FakeProductDAO>(); //<-- dependency injection
+            //services.AddTransient<ICityDAO>(j => new CitySqlDAO(@"Data Source=.\sqlexpress;Initial Catalog=world;Integrated Security=true;"));
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
@@ -59,11 +62,11 @@ namespace TempDataAndSession
 
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
-            #region needed for session
+			
+			#region needed for session
             app.UseSession();
-            #endregion
-
+			#endregion
+			
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

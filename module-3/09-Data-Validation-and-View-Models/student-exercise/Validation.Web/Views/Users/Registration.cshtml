@@ -1,0 +1,55 @@
+﻿@model RegistrationViewModel
+@{
+    ViewData["Title"] = "Registration";
+}
+
+<h2>Registration</h2>
+
+<form asp-controller="Users" asp-action="Register" method="post">
+
+ 
+
+    <div>
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" />
+        <span asp-validation-for="FirstName"></span>
+    </div>
+    <div>
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" />
+        <span asp-validation-for="LastName"></span>
+    </div>
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div>
+        <label asp-for="ConfirmEmail"></label>
+        <input asp-for="ConfirmEmail" />
+        <span asp-validation-for="ConfirmEmail"></span>
+    </div>
+    <div>
+        <label asp-for="Password"></label>
+        <input asp-for="Password" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div>
+        <label asp-for="ConfirmPassword"></label>
+        <input asp-for="ConfirmPassword" />
+        <span asp-validation-for="ConfirmPassword"></span>
+    </div>
+    <div>
+        <label asp-for="Birthday"></label>
+        <input asp-for="Birthday" />
+        <span asp-validation-for="Birthday"></span>
+    </div>
+    <div>
+        <label asp-for="NumberOfTickets"></label>
+        <input asp-for="NumberOfTickets" />
+        <span asp-validation-for="NumberOfTickets"></span>
+    </div>
+
+
+    <input class="btn btn-success" type="submit" value="Submit" />
+</form>

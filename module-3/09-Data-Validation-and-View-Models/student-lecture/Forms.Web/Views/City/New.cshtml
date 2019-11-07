@@ -1,0 +1,42 @@
+﻿@model City
+@{
+    ViewData["Title"] = "New";
+}
+
+<h2>New</h2>
+
+<form asp-controller="city" asp-action="new" method="post">
+    <div>
+        <ul style="color:red" >
+            <li><span asp-validation-for="Name"></span></li>
+            <li><span asp-validation-for="CountryCode"></span></li>
+            <li><span asp-validation-for="District"></span></li>
+            <li> <span asp-validation-for="Population"></span></li>
+        </ul>
+
+    </div>
+
+
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+
+    </div>
+    <div>
+        <label asp-for="CountryCode"></label>
+        <input asp-for="CountryCode" />
+
+    </div>
+    <div>
+        <label asp-for="District"></label>
+        <input asp-for="District" />
+
+    </div>
+    <div>
+        <label asp-for="Population"></label>
+        <input asp-for="Population" />
+
+    </div>
+
+    <input type="submit" value="Add City" />
+</form>

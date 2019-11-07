@@ -1,0 +1,26 @@
+﻿@model LoginViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Login</h2>
+
+<form asp-controller="Users" asp-action="Login" method="post">
+
+    
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+
+    </div>
+    <div>
+        <label asp-for="Password"></label>
+        <input asp-for="Password" />
+        <span asp-validation-for="Password"></span>
+
+    </div>
+
+    <input style="background-color:#2c93de;" class="btn" type="submit" value="Login" />
+</form>
+
