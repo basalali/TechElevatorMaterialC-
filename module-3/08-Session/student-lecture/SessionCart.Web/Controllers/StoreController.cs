@@ -37,9 +37,39 @@ namespace SessionCart.Web.Controllers
             16.(ViewCart View)      Bind go ShoppingCart and disply each product in it
         */
 
+
+        private IProductDAO productDAO;
+        public StoreController(IProductDAO productDAO)
+        {
+            this.productDAO = productDAO;
+        }
+
         public ActionResult Index()
         {
-            return View();
+            IList<Product> products  = productDAO.GetProducts();
+             return View(products);
+        }
+
+        public ActionResult AddToCart(int id)
+        {
+;
+            List<int> result = AddToList(id);
+            return View(result);
+        }
+
+        private List<int> AddToList(int productId)
+        {
+            List<int> result = new List<int>();
+
+            List<int> current = HttpContext.Session.Get<List<int>>("ShoppingCart");
+
+            if (current == null)
+            {
+                current = result;
+            }
+            current.Add(productId);
+            HttpContext.Session.Set<List<int>>("ShoppingCart", current);
+            return current;
         }
     }
 }

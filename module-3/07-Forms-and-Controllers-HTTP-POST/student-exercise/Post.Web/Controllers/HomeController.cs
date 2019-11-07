@@ -12,11 +12,39 @@ namespace Post.Web.Controllers
     public class HomeController : Controller
     {
 
-        // GET: Home
-        public ActionResult Index()
+        private IReviewDAO reviewPostDAO;
+        //Inject controller
+        public HomeController(IReviewDAO reviewPostDAO)
         {
-            return View();
-        }        
+
+            this.reviewPostDAO = reviewPostDAO;
+        }
+
+        public IActionResult Index()
+        {
+            IList<Review> reviews = reviewPostDAO.GetAllReviews();
+
+            return View(reviews);
+        }
+        [HttpGet]
+        public IActionResult NewPost()
+        {
+            Review review = new Review();
+            return View(review);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult NewPost(Review review)
+        {
+            reviewPostDAO.SaveReview(review);
+
+            return RedirectToAction("Index");
+        }
+
+
+
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

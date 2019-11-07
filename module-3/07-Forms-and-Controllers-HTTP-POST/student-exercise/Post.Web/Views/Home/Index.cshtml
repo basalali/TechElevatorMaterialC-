@@ -1,6 +1,39 @@
 ﻿
+@model IEnumerable<Post.Web.Models.Review>
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Index";
+    
 }
 
+<style>
 
+    .starGlowN {
+        background-image: url('/Images/star.png');
+        min-width: 30px;
+        min-height: 30px;
+        display: inline-block;
+    }
+</style>
+<div style="background-color: white;">
+    <img style="width: 10%" src="~/images/forDummies.png" />
+    <h2 style="font-weight: 600; font-size: 20px; text-align:left;"> Past Reviews</h2>
+    <br /><br />
+
+    @foreach (var item in Model)
+    {
+
+        <div style="font-weight: 600; font-size: 16px;">
+            @item.ReviewTitle
+            @for (var i = 1; i <= item.Rating; i++)
+            {
+                <span class="starGlowN"></span>
+            }
+        </div>
+        <div style="font-size: 14px;"> by @item.Username on @item.ReviewDate </div>
+        @item.ReviewText <br />
+        <br />
+    }
+    <a asp-action="NewPost"><h3 font-size: 15px;" class="btn btn-success">Submit a new review!</h3> </a>
+    <br /><br /><br />
+
+</div>

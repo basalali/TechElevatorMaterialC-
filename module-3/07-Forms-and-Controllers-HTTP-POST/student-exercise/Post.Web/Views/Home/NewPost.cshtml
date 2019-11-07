@@ -1,0 +1,35 @@
+﻿
+@model Post.Web.Models.Review
+
+@{
+    ViewData["Title"] = "NewPost";
+}
+<div style="background-color: white;">
+
+
+    <h2 style="font-weight: 600; font-size: 20px; text-align:left;">New Book Review</h2>
+
+    <form asp-action="NewPost" method="post">
+        Enter you name:
+        <input type="text" name="Username" /> <br />
+        How many stars:
+        <select name="Rating">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select> <br />
+        Provide a title:
+        <input type="text" name="ReviewTitle" /><br />
+        Review:
+        <input type="text" name="ReviewText" /><br />
+        <input type="submit" value="Submit!">
+
+        <br /><br /><br /><br /><br />
+    </form>
+
+
+
+</div>
