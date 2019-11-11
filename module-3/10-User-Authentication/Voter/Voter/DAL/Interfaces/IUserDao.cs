@@ -33,5 +33,7 @@ namespace Voter.DAL.Interfaces
         /// <summary>Get all of the users from the database.</summary>
         /// <returns>A List of user objects.</returns>
         IList<User> GetAllUsers();
+
+        User GetUserByUserName(string UserName);
     }
 }

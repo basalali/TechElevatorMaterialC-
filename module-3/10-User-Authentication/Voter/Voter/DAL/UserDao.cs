@@ -18,6 +18,8 @@ namespace Voter.DAL
 
         private readonly string sql_GetAllUsers = "SELECT id, username, role FROM users";
 
+        private readonly string sql_GetUserByUserName = "SELECT * from users where username = @username ";
+
         private readonly string sql_IsUsernameAndPasswordValid = "SELECT password, salt FROM users WHERE username = @username;";
 
         private readonly string sql_SaveUser = @"INSERT INTO users(username, password, salt) " +
@@ -60,6 +62,43 @@ namespace Voter.DAL
             }
 
             return users;
+        }
+
+        public User GetUserByUserName(string UserName)
+        {
+            User user = new User();
+
+            try
+            {
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+                    command.CommandText = sql_GetUserByUserName;
+                    command.Parameters.AddWithValue("@username", UserName);
+
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.Read())
+                    {
+
+                        user.Id = Convert.ToInt32(reader["id"]);
+                        user.Username = Convert.ToString(reader["username"]);
+                        user.Role = Convert.ToInt32(reader["role"]);
+
+                    }
+                }
+            }
+
+            catch (SqlException)
+            {
+
+                user = new User();
+            }
+
+            return user;
+
         }
 
         public bool IsUsernameAndPasswordValid(string userName, string password)
