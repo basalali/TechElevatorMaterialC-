@@ -73,13 +73,22 @@ namespace Voter.Controllers
 
         public IActionResult Logout()
         {
-            return View();
+            base.LogUserOut();         
+            return RedirectToAction("Login", "User");
         }
 
         public IActionResult List()
         {
             //for admin only
+            if(!base.IsAdmin)
+            {
+                TempData["ErrorMessage"] = "You are not authorized for this transaction";
+                return RedirectToAction("Error", "Home");
+            }
+            IList<User> users = userDao.GetAllUsers();
             return View();
         }
+
+
     }
 }

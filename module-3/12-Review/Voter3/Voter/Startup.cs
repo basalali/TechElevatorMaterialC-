@@ -44,6 +44,7 @@ namespace Voter
             #endregion
 
             services.AddTransient<IUserDao>(m => new UserDao(Startup.ConnectionString));
+            services.AddTransient<IPersonDao>(m => new PersonDao(Startup.ConnectionString));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
