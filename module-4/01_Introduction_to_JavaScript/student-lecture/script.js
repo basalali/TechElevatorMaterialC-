@@ -12,7 +12,14 @@ function variables() {
   // Declares a variable where the value cannot be changed
   // Declares a variable those value can be changed
   // Declares a variable that will always be an array
+
+
+  let name  = 'Basal';
+  const job = "Instructor";
+  console.log(name);
+  console.log(job);
 }
+//variables();
 
 /**
  * Functions can also accept parameters.
@@ -27,6 +34,8 @@ function printParameters(param1, param2) {
   console.log(`The value of param1 is ` + param1);
   console.log(`The value of param2 is ${param2}`);
 }
+
+printParameters(2,5);
 
 /**
  * Compares two values x and y.
