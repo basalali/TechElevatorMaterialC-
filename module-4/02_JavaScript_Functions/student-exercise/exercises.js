@@ -1,5 +1,7 @@
 /*
  * Document this function
+
+
  */
 function isSummer(month, day = 1, hemisphere = 'northern') {
   if (month === 7 || month === 8) {
@@ -62,18 +64,13 @@ function isAdmitted(gpa, satScore, recommendation)
  * @param {function} filterFunction the function to filter with
  * @returns {number[]} the filtered array
  */
-let unfilteredArray = [1, 2, 3, 4, 5, 6];
 
-function useParameterToFilterArray(x)
+
+let unfilteredArr = [1, 2, 3, 4, 5, 6];
+function useParameterToFilterArray(filterFunction)
 {
-
-  unfilteredArray = x.map(function (unfilteredArray) {
-    return unfilteredArray
-  });
-
-
+return unfilteredArr.filter(filterFunction);
 }
-
 
 
 
@@ -134,16 +131,12 @@ function addAll()
 
 function makeHappy(myArray)
 {
-
-  
-
  
   return myArray.map(x => "Happy" + ' ' + x)
 
 
 
 }
-
 
 
 
@@ -166,22 +159,17 @@ function makeHappy(myArray)
  * Use `map` and an anonymous function.
  */
 
-function getFullAddressesOfProperties(properties)
-{
-
-var fulladdress = []
-let count = 0
-
-  for (var i=0; i < arguments.length; i++) {
-      fulladdress[count] = arguments[i];
-      count++;
+ /**
+  * This functioned name getFullAddressesOfProperties takes in an array
+  * and uses array.map and anonymous function and returns a new array in the form of a street address.
+  * @param {Array} arr object passed in containing keys
+  * @param {Array} result the new array in the form of a street address
+  * 
+  */
+function getFullAddressesOfProperties(arr){
+  let result = arr.map(x => x.streetNumber + " " + x.streetName + " " + x.streetType + " " + x.city + " " + x.state + " " + x.zip);
+  return result;
   }
-
-return fulladdress;
-
-}
-
-
 
 
 /*
@@ -192,17 +180,31 @@ return fulladdress;
  */
 
 
-  let largest = 0;
+ function findLargest(array)
+ {
 
-  arr.forEach(function(findLargest){
-    if(largest < findLargest) 
-    largest = findLargest;
+  let largest = -Infinity;
+  let string = '';
 
+
+  if(isNaN(array[0]))
+{
+array.forEach(str =>
+{if(str > string)
+{string = str;}
+})
+return string;
+}
+
+  array.forEach(function(arr)
+  {
+   if(arr > largest)
+   {
+     largest = arr;
+   }
   });
-
-
-
-
+  return largest;
+ }
 
 
 /*
