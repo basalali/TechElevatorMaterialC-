@@ -26,6 +26,15 @@ function printToConsole(value) {
  * @param {number} secondParameter the second parameter to multiply
  */
 
+ function multiplyTogether(firstParameter = 1, secondParameter)
+ {
+
+return firstParameter * secondParameter;
+
+
+ }
+
+
 /**
  * This version makes sure that no parameters are ever missing. If
  * someone calls this function without parameters, we default the
@@ -36,6 +45,14 @@ function printToConsole(value) {
  * @param {number} [firstParameter=0] the first parameter to multiply
  * @param {number} [secondParameter=0] the second parameter to multiply
  */
+
+function multiplyNoUndefined(firstParameter = 1, secondParameter= 0)
+{
+
+  return firstParameter * secondParameter;
+}
+
+
 
 /**
  * Scope is defined as where a variable is available to be used.
@@ -73,15 +90,30 @@ function createSentenceFromUser(name, age, listOfQuirks = [], separator = ', ') 
  * @returns {number} sum of all the numbers
  */
 function sumAllNumbers(numbersToSum) {
-  return numbersToSum.reduce();
+  return numbersToSum.reduce((sum, value) =>
+  {
+    return sum+= value;
+  });
 }
 
 /**
  * Takes an array and returns a new array of only numbers that are
  * multiples of 3
- *
+ * 
+ * 
  * @param {number[]} numbersToFilter numbers to filter through
  * @returns {number[]} a new array with only those numbers that are
  *   multiples of 3
  */
-function allDivisibleByThree(numbersToFilter) {}
+function allDivisibleByThree(numbersToFilter) {
+
+return numbersToFilter.filter(n => {
+
+  return n%3 === 0;
+
+
+})
+
+}
+
+

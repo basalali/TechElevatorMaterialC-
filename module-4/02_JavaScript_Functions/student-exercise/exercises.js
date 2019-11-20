@@ -41,6 +41,20 @@ function isSummer(month, day = 1, hemisphere = 'northern') {
  * @returns {boolean} true if they are admitted
  */
 
+function isAdmitted(gpa, satScore, recommendation)
+{
+  if (gpa > 4.0 || satScore > 1300 || (gpa > 3.0 && recommendation) || (satScore > 1200 && recommendation))
+  {
+    return true;
+  }
+  return false;
+
+
+}
+
+
+
+
 /**
  * Write a function called useParameterToFilterArray so that it takes an anonymous
  * function and uses that in `unfilteredArray` filter function. Return the result.
@@ -49,6 +63,20 @@ function isSummer(month, day = 1, hemisphere = 'northern') {
  * @returns {number[]} the filtered array
  */
 let unfilteredArray = [1, 2, 3, 4, 5, 6];
+
+function useParameterToFilterArray(x)
+{
+
+  unfilteredArray = x.map(function (unfilteredArray) {
+    return unfilteredArray
+  });
+
+
+}
+
+
+
+
 
 /**
  * Write a function called makeNumber to take two strings
@@ -63,6 +91,18 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  * @returns {number} the resultant number
  */
 
+function makeNumber( a, b)
+{
+  let result = parseInt(a+b);
+
+  return result;
+
+
+
+
+}
+
+
 /**
  * Write a function called addAll that takes an unknown number of parameters
  * and adds them all together. Return the result.
@@ -71,11 +111,42 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  * @returns {number} the sum of all the parameters (or arguments)
  */
 
+function addAll()
+{
+  var s = 0;
+  for (var i=0; i < arguments.length; i++) {
+      s += arguments[i];
+  }
+  return s;
+
+
+}
+
+
+
 /*
  * Write and document a function called makeHappy that takes
  * an array and prepends 'Happy ' to the beginning of all the
  * words and returns them as a new array. Use the `map` function.
  */
+
+
+
+function makeHappy(myArray)
+{
+
+  
+
+ 
+  return myArray.map(x => "Happy" + ' ' + x)
+
+
+
+}
+
+
+
+
 
 /*
  * Write and document a function called getFullAddressesOfProperties
@@ -95,12 +166,44 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  * Use `map` and an anonymous function.
  */
 
+function getFullAddressesOfProperties(properties)
+{
+
+var fulladdress = []
+let count = 0
+
+  for (var i=0; i < arguments.length; i++) {
+      fulladdress[count] = arguments[i];
+      count++;
+  }
+
+return fulladdress;
+
+}
+
+
+
+
 /*
  * Create and document a function called findLargest.
  *
  * Using `forEach`, find the largest element in an array.
  * It should work for strings and numbers.
  */
+
+
+  let largest = 0;
+
+  arr.forEach(function(findLargest){
+    if(largest < findLargest) 
+    largest = findLargest;
+
+  });
+
+
+
+
+
 
 /*
  * CHALLENGE
