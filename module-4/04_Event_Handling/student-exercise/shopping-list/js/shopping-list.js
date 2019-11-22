@@ -37,6 +37,10 @@ function displayGroceries() {
   });
 }
 
+
+//------------------------------------
+
+
 function markCompleted()
 {
 
@@ -67,14 +71,36 @@ function markCompleted()
 
 setPageTitle();
 displayGroceries();
+markCompleted();
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  const tasks = document.querySelectorAll('li');
 
-  const button = document.getElementsById('toggleAll');
-  button.addEventListener('click', markCompleted);
+  const button = document.getElementById('toggleAll');
+  button.addEventListener('click', () => {
+
+    tasks.forEach((task) => {
+      if(allItemsIncomplete){
+      task.classList.add('completed');
+      task.querySelector('i').classList.add('completed');
+ 
+      button.innerHTML= "Mark All Incomplete"; 
+       
+    }
+    else{
+
+      task.classList.remove('completed');
+      task.querySelector('i').classList.remove('completed');
+      button.innerHTML= "Mark All Complete";
+
+    }
+   
   
+  })
+  allItemsIncomplete = !allItemsIncomplete;
+})
 });
 
