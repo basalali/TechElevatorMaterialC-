@@ -37,5 +37,44 @@ function displayGroceries() {
   });
 }
 
+function markCompleted()
+{
+
+  const tasks = document.querySelectorAll('li');
+
+  tasks.forEach((task) => {
+    // when you click on a task mark it completed
+    task.addEventListener('click', () => {
+      if (!task.classList.contains('completed')) {
+        task.classList.add('completed');
+        task.querySelector('i').classList.add('completed');
+      }
+    });
+
+    // when you double click a task remove the completed class
+    task.addEventListener('dblclick', () => {
+      if (task.classList.contains('completed')) {
+        task.classList.remove('completed');
+        task.querySelector('i').classList.remove('completed');
+      }
+    });
+  });
+    
+
+}
+
+
+
 setPageTitle();
 displayGroceries();
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+
+  const button = document.getElementsById('toggleAll');
+  button.addEventListener('click', markCompleted);
+  
+});
+
