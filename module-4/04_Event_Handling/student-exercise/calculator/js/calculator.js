@@ -71,8 +71,55 @@ function clear() {
   display.value = 0;
 }
 
+
+function addNumber() {
+  const numbers = document.querySelectorAll(".number");
+  const decimal = document.querySelectorAll(".decimal");
+  
+  decimal[0].addEventListener("click", event => {
+  clickNumber(event);
+  })
+  
+  for (let i = 0; i < numbers.length; i++) {
+  const numberButton = numbers[i];
+  numberButton.addEventListener("click", event => {
+  console.log("Click");
+  clickNumber(event);
+  });
+  }
+  }
+  
+  function clearFunction() {
+  const clearButton = document.querySelector(".all-clear");
+  clearButton.addEventListener("click", () => {
+  clear();
+  })
+  }
+  
+  function operatorsFunc() {
+  const operators = document.querySelectorAll(".operator");
+  
+  for (let i = 0; i < operators.length; i++) {
+  const operator = operators[i];
+  operator.addEventListener("click", event => {
+  console.log("Click");
+  clickOperator(event);
+  });
+  }
+  }
+  
+  function equalsFunc() {
+  const equals = document.querySelector(".equal-sign");
+  equals.addEventListener("click", event => {
+  performOperation();
+  });
+  }
+
+
+
+
 // add event listener for when the DOM is loaded
-document.addEventListener('LOADED_EVENT_GOES_HERE', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
   // set the variable called display equal to the display element
   // HINT: use its id #display to get a reference to it
@@ -94,6 +141,13 @@ document.addEventListener('LOADED_EVENT_GOES_HERE', () => {
 
   // add click event listener for the equal sign
   // should call the function performOperation
+display = document.getElementById('display');
+  addNumber();
+  clearFunction();
+  operatorsFunc()
+  equalsFunc();
+
+
 
 });
 

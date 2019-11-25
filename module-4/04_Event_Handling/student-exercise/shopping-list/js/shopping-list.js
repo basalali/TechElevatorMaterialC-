@@ -98,7 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
    
-  
   })
   allItemsIncomplete = !allItemsIncomplete;
 })
