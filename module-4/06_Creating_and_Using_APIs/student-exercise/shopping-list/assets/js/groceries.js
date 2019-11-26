@@ -1,5 +1,5 @@
 /* UPDATE THIS TO YOUR URL */
-const API_URL = 'http://5c53275ea659410014eeea14.mockapi.io/api/groceries';
+//const API_URL = 'http://5c53275ea659410014eeea14.mockapi.io/api/groceries';
 
 let groceries = [];
 
