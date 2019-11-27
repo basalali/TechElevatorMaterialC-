@@ -1,6 +1,8 @@
 /* UPDATE THIS TO YOUR URL */
 //const API_URL = 'http://5c53275ea659410014eeea14.mockapi.io/api/groceries';
 
+const API_URL = "https://localhost:44322/api/groceries";
+
 let groceries = [];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -127,7 +129,15 @@ function getItemById(id) {
  * On  success if should set the groceries[], and call the displayGroceries() method
  */
 function loadGroceries() {
-
+   
+    fetch(API_URL)
+     .then((response) => {
+         return response.json();
+     })
+     .then((data) => {
+         groceries = data;
+         displayGroceries();
+     })
 
 }
 
@@ -139,6 +149,18 @@ function loadGroceries() {
  */
 function updateItem(item, completed) {
 
+    item.completed = completed;
+    //PUT
+    fetch(`https://localhost:44322/api/groceries/${item.id}`, {
+    method: "PUT",
+    body: JSON.stringify(item),
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json"
+    }
+  })
+
+
 }
 
 /**
@@ -148,7 +170,9 @@ function updateItem(item, completed) {
  */
 function deleteItem(item) {
 
-
+    fetch(`https://localhost:44322/api/groceries/${item.id}`, {
+        method: "DELETE"
+      });
 }
 
 
@@ -159,5 +183,13 @@ function deleteItem(item) {
 function saveItem(item) {
 
 
+    fetch(`https://localhost:44322/api/groceries`, {
+        method: "POST",
+        body: JSON.stringify(item),
+        headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+    }
+      });
   
 }
