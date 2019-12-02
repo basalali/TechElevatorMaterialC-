@@ -1,12 +1,8 @@
 <template>
     <div class="todo-list">
-        <h1>{{this.title}}</h1>
+        <h1>My Daily Routine</h1>
         <ul>
-            <li v-for="todo in todos" 
-                v-bind:key="todo.id" 
-                v-bind:class="{'todo-completed': todo.completed}" 
-                v-on:click="changeStatus(todo.id, $event)">
-                <input type="checkbox"/>
+            <li v-for="todo in todos" v-bind:key="todo.id" v-bind:class="{'todo-completed': todo.completed}">
                 {{todo.task}} <i class="far fa-check-circle" v-bind:class="{completed: todo.completed}"></i>
             </li>
         </ul>
@@ -15,21 +11,22 @@
 
 <script>
 export default {
-    props: {
-        title: String,
-        search: String,
-        todos: Array
-    },
-    methods: {
-        changeStatus(id,event) {
-            const arrIndex = this.todos.findIndex((todo) => todo.id == id);
-            this.todos[arrIndex].completed = !this.todos[arrIndex].completed;
-           
-            // the checkbox might not have been target of the click event
-            if( event.target.type != 'checkbox' ) {
-                const checkbox = event.target.querySelector('input[type="checkbox"]');
-                checkbox.checked = !checkbox.checked;
-            }
+    data() {
+        return {
+           todos: [
+               { task: 'Wake up', completed: false },
+               { task: '5 Minute Morning Movement', completed: false },
+               { task: 'Meditate', completed: false },
+               { task: 'Brush Teeth', completed: false },
+               { task: 'Shower', completed: false },
+               { task: 'Get Dressed', completed: false },
+               { task: 'Drive to work', completed: false },
+               { task: 'Complete Work', completed: false },
+               { task: 'Drive home from work', completed: false },
+               {  task: 'Dinner', completed: false },
+               {  task: 'Brush Teeth', completed: false },
+               {  task: 'Go to bed', completed: false }
+           ]
         }
     }
 }
@@ -50,7 +47,7 @@ h1 {
     font-size:24px;
     text-transform: uppercase;
     text-align: center;
-    margin:0px;
+    margin-bottom: 0px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -63,9 +60,10 @@ li {
     font-size: 24px;
     border-bottom:1px solid #f2f2f2;
     padding:10px 20px;
-    cursor:pointer;
 }
-
+li:nth-child(odd) {
+    /* background-color: rgb(129, 182, 129); */
+}
 li:last-child{
     border:0px;
 }
