@@ -40,12 +40,16 @@ namespace ShoppingListAPI.Controllers
         [HttpPost]
         public ActionResult Create([FromBody] Item item)
         {
+<<<<<<< HEAD
 
             dal.Add(item);
 
             //return a created route to indicate where the resource can be found
 
             return CreatedAtRoute("GetItem", new { id = item.Id }, item);
+=======
+            return NotFound();
+>>>>>>> 321dace7114820362d8faf9e9da4c6bef6a97ef4
         }
 
         [HttpPut("{id}")]

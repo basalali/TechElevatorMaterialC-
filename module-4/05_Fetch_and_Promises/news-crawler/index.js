@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const collectApi = document.getElementById("collectApi");
     const saveBtn = document.getElementById("saveBtn");
 
-    //is there a key for newsPai.org?
+    //is there a key for newsAPI.org?
     if (localStorage.getItem("storedApiKey")) {
         apiKey = localStorage.getItem("storedApiKey");
         apiBtn.innerText = "Change API key"
